@@ -2,9 +2,11 @@
     "categories": [
         {
             "name": "Auto",
+            "categoryKey": "auto",
             "types": [
                 {
                     "name": "Auto Body & Paint Shop",
+                    "typeKey": "autoBodyAndPaintShop",
                     "requiredPDFs": [
                         {
                             "url": "https://someurl2.com",
@@ -32,6 +34,7 @@
                 },
                 {
                     "name": "Auto Dealer",
+                    "typeKey": "autoDealer",
                     "requiredPDFs": [
                         {
                             "url": "https://someurl2.com",
@@ -61,9 +64,11 @@
         },
         {
             "name": "Child & Elder Care",
+            "categoryKey": "childAndElderCare",
             "types": [
                 {
                     "name": "Adult Day Care",
+                    "typeKey": "adultDayCare",
                     "requiredPDFs": [
                         {
                             "url": "https://someurl2.com",
@@ -91,6 +96,7 @@
                 },
                 {
                     "name": "Assisted Living Facility",
+                    "typeKey": "assitedLivingFacility",
                     "requiredPDFs": [
                         {
                             "url": "https://someurl2.com",
