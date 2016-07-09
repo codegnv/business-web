@@ -1,0 +1,122 @@
+{
+    "categories": [
+        {
+            "name": "Auto",
+            "types": [
+                {
+                    "name": "Auto Body & Paint Shop",
+                    "requiredPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Seller’s Permit",
+                            "description": "Permit required in order to sell or lease tangible personal property in the State of California."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Automotive Repair Dealer License",
+                            "description": "Licenses business that work on motor vehicles and ensures state regulations and and standards are enforced."
+                        }
+                    ],
+                    "optionalPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Seller’s Permit (optional)",
+                            "description": "Permit required in order to sell or lease tangible personal property in the State of California."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Something something and something else",
+                            "description": "Sure, yep, and OK"
+                        }
+                    ]
+                },
+                {
+                    "name": "Auto Dealer",
+                    "requiredPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Vehicle Dealer License",
+                            "description": "This license is required for businesses that deal in automobiles and other vehicles, such as car dealerships."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Environmental Health Hazardous Materials Registration",
+                            "description": "Registration ensures that hazardous waste is stored safely, legally managed, and disposed of properly."
+                        }
+                    ],
+                    "optionalPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Seller’s Permit (optional)",
+                            "description": "Permit required in order to sell or lease tangible personal property in the State of California."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Something something and something else again",
+                            "description": "Sure, yep, and OK, again"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Child & Elder Care",
+            "types": [
+                {
+                    "name": "Adult Day Care",
+                    "requiredPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Medical Waste Generator Registration",
+                            "description": "Required for any person whose act or process produces, generates, or stores medical waste onsite."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Adult Day Care License",
+                            "description": "Allows businesses to provide certian levels of assistance care to to older persons and adults in need."
+                        }
+                    ],
+                    "optionalPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Seller’s Permit (optional)",
+                            "description": "Permit required in order to sell or lease tangible personal property in the State of California."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Something something and something else",
+                            "description": "Sure, yep, and OK"
+                        }
+                    ]
+                },
+                {
+                    "name": "Assisted Living Facility",
+                    "requiredPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Residential Facility License",
+                            "description": "Allows an individual or corporation to run a senior residential facility, ensuring health and safety standards are met. These facilities require varying levels of personal care and protective supervision."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Medi-Cal/Medicaid Enrollment",
+                            "description": "Allows fee-for-service healthcare providers to enroll in the Medi-Cal program and bill that organization for services provided."
+                        }
+                    ],
+                    "optionalPDFs": [
+                        {
+                            "url": "https://someurl2.com",
+                            "title": "Seller’s Permit (optional)",
+                            "description": "Permit required in order to sell or lease tangible personal property in the State of California."
+                        },
+                        {
+                            "url": "https://someurl3.com",
+                            "title": "Something something and something else again",
+                            "description": "Sure, yep, and OK, again"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
