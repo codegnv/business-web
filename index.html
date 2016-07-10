@@ -10,11 +10,24 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css"/>
+
+    <style>
+
+        .filterParent, .filterChild {
+            cursor: pointer;
+        }
+
+        .optional {
+            background: lightgray;
+        }
+
+    </style>
   </head>
   <body>
 
     <div id="app"></div>
 
+    <script src="./mock_data/homepage.js"> </script>
     <script src="./dist/app.js"> </script>
     <script>
       app();

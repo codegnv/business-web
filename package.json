@@ -17,7 +17,10 @@
     "gulp": "~3.8.10",
     "gulp-rename": "^1.2.0",
     "lodash": "^2.4.1",
+    "material-ui": "^0.15.2",
     "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-tap-event-plugin": "^1.0.0",
     "rimraf": "~2.2.8",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"

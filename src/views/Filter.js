@@ -1,45 +1,35 @@
 var React = require('react');
+var _ = require('lodash');
 
 var FilterChild = React.createClass({
     
     render: function() {
-        return <li class="filterChild">
-            <span onClick={this.props.onFilter.bind(null, this.props.itemKey)}>{this.props.item.name}</span>
-        </li>;
+        return <div className="filterChild">
+            <span onClick={this.props.onFilter.bind(null, this.props.typeKey)}>{this.props.name}</span>
+        </div>;
     }
 });
 
 var FilterParent = React.createClass({
 
-    getInitialState: function() {
-        return {
-            open: false
-        }
-    },
-
-    onToggleDropdown: function() {
-        this.setState({
-            open: !this.state.open
-        })
-    },
-
     render: function() {
-        var children = this.props.item.childTypes.map(function(type, key) {
-            return <FilterChild onFilter={this.props.onFilter} name={type} itemKey={key} key={key}/>;
+        var category = this.props.category;
+        var children = category && _.map(category.types, function(type, key) {
+            return <FilterChild onFilter={this.props.onFilter} name={type.name} typeKey={key} key={key}/>;
         }.bind(this));
 
-
-        return <li class="filterParent">
-            <span onClick={this.onToggleDropdown}>{this.props.item.name}</span>
-            {this.state.open && children}
+        return <li className="filterParent">
+            <span onClick={this.props.onSelect.bind(null, category.categoryKey)}>{this.props.category.name}</span>
+            {this.props.open && children}
         </li>;
     }
 });
 
 var Filter = React.createClass({
     render: function () {
-        var items = this.props.businessCategories.map(function(category, i) {
-            return <FilterParent item={category} onFilter={this.props.onFilter} key={i}/>
+        var categories = this.props.categories;
+        var items = categories && categories.map(function(category, i) {
+            return <FilterParent open={category.categoryKey === this.props.selectedCat} category={category} onFilter={this.props.onFilter} onSelect={this.props.onSelectCategory} key={i}/>
         }.bind(this));
         
         return <div>

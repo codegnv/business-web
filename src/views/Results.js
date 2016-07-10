@@ -3,10 +3,16 @@ var React = require('react');
 var ResultItem = React.createClass({
     
     render: function() {
-        return <div>
+        var classes = 'resultItem ';
+
+        if (this.props.optional) {
+            classes += ' optional';
+        }
+
+        return <div className={classes}>
             <div>
                 {this.props.item.title}
-                <a href={this.props.item.link} target="_blank"><i class="ion-android-download"></i></a>
+                <a href={this.props.item.link} target="_blank"><i className="ion-android-download"></i></a>
             </div>
             <p>
                 {this.props.item.desc}
@@ -17,9 +23,17 @@ var ResultItem = React.createClass({
 
 var Results = React.createClass({
     render: function () {
-        var items = this.props.files.map(function(item, i) {
-            return <ResultItem item={item}/>
+        var required = this.props.required;
+        var optional = this.props.optional;
+        var items = required && required.map(function(item, i) {
+            return <ResultItem item={item} key={i}/>
         }.bind(this));
+
+        if (optional) {
+            optional.map(function(item) {
+                items.push(<ResultItem item={item} optional={true}/>);
+            });
+        }
         
         return <div>
             {items}
