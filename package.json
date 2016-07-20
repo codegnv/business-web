@@ -1,15 +1,6 @@
 {
-  "name": "es6-6to5-browserify-boilerplate",
+  "name": "c4gnv",
   "version": "0.0.0",
-  "description": "A repo to play with ES6++",
-  "homepage": "https://github.com/thoughtram/es6-6to5-browserify-boilerplate",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/thoughtram/es6-6to5-browserify-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/thoughtram/es6-6to5-browserify-boilerplate/issues"
-  },
   "devDependencies": {
     "babelify": "~5.0.3",
     "browser-sync": "^1.7.1",
@@ -24,7 +15,5 @@
     "rimraf": "~2.2.8",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"
-  },
-  "author": "Christoph Burgdorf <christoph@thoughtram.io>",
-  "license": "MIT"
+  }
 }
