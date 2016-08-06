@@ -9,3 +9,7 @@ https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by
 ## JSON Source data for associations, maintained by the city
 
 https://data.cityofgainesville.org/resource/pp75-zh6w.json
+
+### Architecture Diagram
+
+![Alt text](https://cloud.githubusercontent.com/assets/1063707/17459516/b22d5afa-5c09-11e6-8b37-dce38b9515ce.png "Architecture Diagram")
