@@ -51,21 +51,30 @@ function parseBusinessCategories(response: Response): BusinessCategory[] {
     // property with the actual results
     let allBusinessTypes: BusinessType[] = response.json().map(toBusinessType);
     let businessCategories: any = {};
+
+    // Deduplicate Business Categories
     for (let businessType of allBusinessTypes) {
         businessCategories[businessType.business_category] = true;
     }
+
+    // Initialize array of BusinessCategories to be populated and returned by this function
     let finalBusinessCategories: BusinessCategory[] = [];
 
+    // Loop through deduplicated businessCategories
     for (let businessCategory in businessCategories) {
         if (businessCategories.hasOwnProperty(businessCategory)) {
+            // Initialize empty array of type BusinessType to be used in our BusinessCategory
             let businessTypesForThisCategory: BusinessType[] = [];
             for (let businessType of allBusinessTypes) {
+                // Find business types that have the same category as the category we are currently on in the parent loop
                 if (businessType.business_category === businessCategory) {
                     businessTypesForThisCategory.push(businessType);
                 }
             }
             let finalBusinessCategory = <BusinessCategory>({
+                // name: string
                 name: businessCategory,
+                // businessTypes: BusinessType[]
                 businessTypes: businessTypesForThisCategory
             });
             finalBusinessCategories.push(finalBusinessCategory);
