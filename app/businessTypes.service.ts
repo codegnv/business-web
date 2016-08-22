@@ -11,12 +11,12 @@ export class BusinessTypeService {
     constructor(private http: Http) {
     }
 
-    getAll(): Observable<BusinessType[]> {
-        let businessTypes$ = this.http
+    getAll(): Observable<BusinessCategory[]> {
+        let businessCategories = this.http
         .get(`${this.baseUrl}`, {headers: this.getHeaders()})
         .map(parseBusinessCategories)
         .catch(handleError);
-        return businessTypes$;
+        return businessCategories;
     }
 
     /*
