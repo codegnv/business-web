@@ -154,3 +154,11 @@ nav a.router-link-active {
   background-color: rgba(255, 0, 0, 0.2);
   color: red;
 }
+
+.business-category {
+    font-weight: bold;
+}
+
+.business-type {
+    font-weight: normal;
+}

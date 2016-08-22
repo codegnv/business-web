@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinessType } from './businessType';
 import { BusinessTypeService } from './businessTypes.service';
+import { BusinessCategory } from './businessCategory';
 
 @Component({
   selector: 'businesstype-list',
   template: `
   <section>
     <section *ngIf="isLoading && !errorMessage">
-    Loading our hyperdrives!!! Retrieving data...
+    Retrieving data from data.cityofgainesville.org...
     </section>
-      <ul>
-        <!-- this is the new syntax for ng-repeat -->
-        <li *ngFor="let businesstype of businesstypes">
-          {{businesstype.business_type}}
-        </li>
-      </ul>
+      <div class="business-categories">
+          <!-- this is the new syntax for ng-repeat -->
+          <div class="business-category" *ngFor="let businesscategory of businesscategories">
+            {{businesscategory.name}}
+            <div class="business-type" *ngFor="let businesstype of businesscategory.businessTypes">
+                {{businesstype.business_type}}
+            </div>
+          </div>
+      </div>
       <section *ngIf="errorMessage">
         {{errorMessage}}
       </section>
@@ -22,9 +26,10 @@ import { BusinessTypeService } from './businessTypes.service';
   `
 })
 export class BusinessTypeListComponent implements OnInit {
-  businesstypes: BusinessType[] = [];
+  businesscategories: BusinessCategory[] = [];
   errorMessage: string = '';
   isLoading: boolean = true;
+  businessCategories: any = {};
 
   constructor(private businessTypesService: BusinessTypeService) {}
 
@@ -32,7 +37,7 @@ export class BusinessTypeListComponent implements OnInit {
     this.businessTypesService
       .getAll()
       .subscribe(
-         /* happy path */ b => this.businesstypes = b,
+         /* happy path */ b => this.businesscategories = b,
          /* error path */ e => this.errorMessage = e,
          /* onComplete */ () => this.isLoading = false);
   }
