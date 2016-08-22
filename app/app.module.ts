@@ -6,13 +6,11 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
 import { AppComponent }  from './app.component';
-import { PeopleListComponent } from './people-list.component';
 import { BusinessTypeListComponent } from './businessType-list.component';
-import { PersonDetailsComponent } from './person-details.component';
 
 @NgModule({
   imports: [ BrowserModule, routing, FormsModule, HttpModule],
-  declarations: [ AppComponent, PeopleListComponent, PersonDetailsComponent, BusinessTypeListComponent],
+  declarations: [ AppComponent, BusinessTypeListComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
