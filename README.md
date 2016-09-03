@@ -6,9 +6,13 @@ Make it easier to start a business
 
 https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/pp75-zh6w
 
+https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g
+
 ## JSON Source data for associations, maintained by the city
 
 https://data.cityofgainesville.org/resource/pp75-zh6w.json
+
+https://data.cityofgainesville.org/resource/mfe4-6q3g.json
 
 ### Architecture Diagram
 
