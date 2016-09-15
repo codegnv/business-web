@@ -6,28 +6,7 @@ import { Permit } from './permit';
 
 @Component({
   selector: 'businesstype-list',
-  template: `
-  <section>
-    <section *ngIf="isLoading && !errorMessage">
-    Retrieving data from data.cityofgainesville.org...
-    </section>
-      <div class="business-categories">
-          <!-- this is the new syntax for ng-repeat -->
-          <div class="business-category" *ngFor="let businessCategory of finalBusinessCategories">
-            {{businessCategory.name}}
-            <div class="business-type" *ngFor="let businessType of businessCategory.businessTypes">
-                {{businessType.business_type}}
-                <div class="permit" *ngFor="let permit of businessType.permits">
-                    {{permit.friendly_name}}
-                </div>
-            </div>
-          </div>
-      </div>
-      <section *ngIf="errorMessage">
-        {{errorMessage}}
-      </section>
-  </section>
-  `
+  templateUrl: './businessType-list.component.html',
 })
 export class BusinessTypeListComponent implements OnInit {
     businessTypes: BusinessType[] = [];
