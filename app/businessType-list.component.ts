@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessType } from './businessType';
 import { BusinessTypeService } from './businessTypes.service';
 import { BusinessCategory } from './businessCategory';
 
