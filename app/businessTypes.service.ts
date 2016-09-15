@@ -3,38 +3,34 @@ import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { BusinessType } from './businessType';
 import { BusinessCategory } from './businessCategory';
+import { Permit } from './permit';
 
 @Injectable()
 export class BusinessTypeService {
-    private baseUrl: string = 'https://data.cityofgainesville.org/resource/pp75-zh6w.json';
+    private typesUrl: string = 'https://data.cityofgainesville.org/resource/pp75-zh6w.json';
+    private permitsUrl: string = 'https://data.cityofgainesville.org/resource/mfe4-6q3g.json';
 
     constructor(private http: Http) {
     }
 
-    getAll(): Observable<BusinessCategory[]> {
+    getBusinessCategories(): Observable<BusinessCategory[]> {
         let businessCategories = this.http
-        .get(`${this.baseUrl}`, {headers: this.getHeaders()})
+        .get(`${this.typesUrl}`, {headers: this.getHeaders()})
         .map(parseBusinessCategories)
         .catch(handleError);
         return businessCategories;
     }
 
-    /*
-       get(id: number): Observable<BusinessType> {
-       let person$ = this.http
-       .get(`${this.baseUrl}/people/${id}`, {headers: this.getHeaders()})
-       .map(mapBusinessType);
-       return person$;
-       }
-     */
-    /*
-       save(person: BusinessType): Observable<Response> {
-// this won't actually work because the StarWars API doesn't
-// is read-only. But it would look like this:
-return this.http
-.put(`${this.baseUrl}/people/${person.id}`, JSON.stringify(person), {headers: this.getHeaders()});
-}
-     */
+    getAll() {
+        return Observable.forkJoin(
+            this.http.get(`${this.typesUrl}`, {headers: this.getHeaders()})
+            .map(parseBusinessCategories)
+            .catch(handleError),
+            this.http.get(`${this.permitsUrl}`, {headers: this.getHeaders()})
+            .map(parsePermits)
+            .catch(handleError)
+        );
+    }
 
     private getHeaders() {
         let headers = new Headers();
@@ -43,44 +39,34 @@ return this.http
     }
 }
 
-function parseBusinessCategories(response: Response): BusinessCategory[] {
+function parsePermits(response: Response): Permit[] {
+    // uncomment to simulate error:
+    // throw new Error('ups! Force choke!');
+
+    let permits: Permit[] = response.json().map(toPermit);
+
+    return permits;
+}
+
+function toPermit(r: any): Permit {
+    let permit = <Permit>({
+        friendly_name: r.friendly_name,
+        url: r.url,
+        permit_name: r.permit_name,
+    });
+    // console.log('Parsed permit:', permit);
+    return permit;
+}
+
+function parseBusinessCategories(response: Response): BusinessType[] {
     // uncomment to simulate error:
     // throw new Error('ups! Force choke!');
 
     // The response of the API has a results
     // property with the actual results
     let allBusinessTypes: BusinessType[] = response.json().map(toBusinessType);
-    let businessCategories: any = {};
 
-    // Deduplicate Business Categories
-    for (let businessType of allBusinessTypes) {
-        businessCategories[businessType.business_category] = true;
-    }
-
-    // Initialize array of BusinessCategories to be populated and returned by this function
-    let finalBusinessCategories: BusinessCategory[] = [];
-
-    // Loop through deduplicated businessCategories
-    for (let businessCategory in businessCategories) {
-        if (businessCategories.hasOwnProperty(businessCategory)) {
-            // Initialize empty array of type BusinessType to be used in our BusinessCategory
-            let businessTypesForThisCategory: BusinessType[] = [];
-            for (let businessType of allBusinessTypes) {
-                // Find business types that have the same category as the category we are currently on in the parent loop
-                if (businessType.business_category === businessCategory) {
-                    businessTypesForThisCategory.push(businessType);
-                }
-            }
-            let finalBusinessCategory = <BusinessCategory>({
-                // name: string
-                name: businessCategory,
-                // businessTypes: BusinessType[]
-                businessTypes: businessTypesForThisCategory
-            });
-            finalBusinessCategories.push(finalBusinessCategory);
-        }
-    }
-    return finalBusinessCategories;
+    return allBusinessTypes;
 }
 
 /*

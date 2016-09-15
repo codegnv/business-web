@@ -1,4 +1,7 @@
+import { Permit } from './permit';
+
 export interface BusinessType {
+  permits: Permit[];
   building_commercial: string;
   development_plan_review: string;
   special_event: string;

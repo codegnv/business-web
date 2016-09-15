@@ -162,3 +162,7 @@ nav a.router-link-active {
 .business-type {
     font-weight: normal;
 }
+
+.permit {
+    font-style: italic;
+}
