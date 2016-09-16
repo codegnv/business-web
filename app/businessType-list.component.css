@@ -1,10 +1,14 @@
+.business-categories{
+
+}
 .business-category-row{
 	background-color: lightblue;
 	font-size: 1.1em;
 	padding: 1px;
 }
 .bussiness-type-column{	
-	visibility: collapse;
+	margin-bottom: 100%;
+	visibility: collapse;	
 	float: right;
 	display: none;
 	position: relative;	
@@ -16,8 +20,9 @@
 	left:100%;
 
 }
+.business-categories-type{	
+}
 .bussiness-type{
-
 }
 .business-category-name{
 	font-family: sans-serif;
@@ -28,7 +33,7 @@
 	padding: 2px;
 }
 
-.business-category-row:hover .bussiness-type-column{
+.business-category-row:hover .bussiness-type-column {
     -webkit-animation: slide 0.5s forwards;
     -webkit-animation-delay: 1s;
     animation: slide 0.5s forwards;   
@@ -37,7 +42,6 @@
 
     /*animation-delay: 2s;*/
 }
-
 @-webkit-keyframes slide {
     100% {  left: 0; }
 }
