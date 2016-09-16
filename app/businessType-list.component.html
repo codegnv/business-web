@@ -1,24 +1,20 @@
-  <section class="contianer">
-    <section *ngIf="isLoading && !errorMessage">
-    Retrieving data from data.cityofgainesville.org...
-    </section>
-      <div class=" business-categories">
+<section >
+	<section *ngIf="isLoading && !errorMessage"> Retrieving data from data.cityofgainesville.org... 
+	</section>
+	 <div class=" business-categories">
           <!-- this is the new syntax for ng-repeat -->
-          <div class="row business-category" *ngFor="let businessCategory of finalBusinessCategories">
-            {{businessCategory.name}}
-            <li class="business-type" *ngFor="let businessType of businessCategory.businessTypes">
-                {{businessType.business_type}}
-              <ul>
-               <li> <a href="url" class="permit" *ngFor="let permit of businessType.permits">
-                    {{permit.friendly_name}}
-                </a></li>
-               </ul>
-            </li>
-          </div>
-          <br>
-      </div>
-      <section *ngIf="errorMessage">
-        {{errorMessage}}
-      </section>
- </section>
- 
+	<div class="row business-category" *ngFor="let businessCategory of finalBusinessCategories"><h4>{{businessCategory.name}}</h4>
+		<div class="col-md-6">
+			<div class="container">
+				<div class="business-type" *ngFor="let businessType of businessCategory.businessTypes">{{businessType.business_type}}</div>	  
+			       <li> <a href="url" class="permit" *ngFor="let permit of businessType.permits">
+			            {{permit.friendly_name}}</a>
+			       </li>		
+			</div>
+		</div>		
+	</div>
+	</div>
+	<div *ngIf="errorMessage">
+		{{errorMessage}}
+	</div>
+</section>

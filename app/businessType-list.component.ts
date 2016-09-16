@@ -6,7 +6,7 @@ import { Permit } from './permit';
 
 @Component({
   selector: 'businesstype-list',
-  templateUrl: './businessType-list.component.html',
+  templateUrl: './businessType-list.component.html'
 })
 export class BusinessTypeListComponent implements OnInit {
     businessTypes: BusinessType[] = [];
