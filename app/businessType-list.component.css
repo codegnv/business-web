@@ -1,0 +1,47 @@
+.business-category-row{
+	background-color: lightblue;
+	font-size: 1.1em;
+	padding: 1px;
+}
+.bussiness-type-column{	
+	visibility: collapse;
+	float: right;
+	display: none;
+	position: relative;	
+	background-color: #e7a61a;
+	border: 2px solid black;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+	overflow: hidden;
+	top:0;
+	left:100%;
+
+}
+.bussiness-type{
+
+}
+.business-category-name{
+	font-family: sans-serif;
+	font-weight: bold;
+	background-color: darkblue;
+	color:white;
+	width: 300px;
+	padding: 2px;
+}
+
+.business-category-row:hover .bussiness-type-column{
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 1s;
+    animation: slide 0.5s forwards;   
+    visibility: visible;
+    display: block; 
+
+    /*animation-delay: 2s;*/
+}
+
+@-webkit-keyframes slide {
+    100% {  left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0;}
+}
