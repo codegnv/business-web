@@ -21,10 +21,14 @@ export class BusinessTypeService {
     }
 
     getBusinessCategories() {
-        return this.getPermits().flatMap(permits =>
+        return Observable.forkJoin(
+            this.getPermits(),
             this.http.get(`${this.baseUrl}/${this.typesPath}`)
-                .map((res: Response) => res.json())
-                .flatMap(types => types)
+                .map((res: Response) => res.json()),
+            (permits, businessTypes) =>
+                // Create an observable from the business types array so we can
+                // use Observable methods for grouping
+                Observable.from(businessTypes)
                 .groupBy((businessType: BusinessType) => businessType.business_category)
                 .map((businessTypes: any) => {
                     let businessCategory: BusinessCategory = new BusinessCategory(businessTypes.key);
@@ -38,8 +42,12 @@ export class BusinessTypeService {
 
                     return businessCategory;
                 })
-                .toArray()
-        ).catch(handleError);
+        )
+        // Flatten inner observable and convert to array for
+        // iterator consumption
+        .flatMap((obs: Observable<BusinessCategory>) => obs)
+        .toArray()
+        .catch(handleError);
     }
 }
 
