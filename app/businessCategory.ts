@@ -1,6 +1,14 @@
 import { BusinessType } from './businessType';
 
-export interface BusinessCategory {
+export class BusinessCategory {
   name: string;
-  businessTypes: BusinessType[];
+  businessTypes: BusinessType[] = [];
+
+  constructor(name: string) {
+      this.name = name;
+  }
+
+  add(businessType: BusinessType) {
+      this.businessTypes.push(businessType);
+  }
 }
