@@ -25,10 +25,10 @@ export class BusinessTypeService {
             this.getPermits(),
             this.http.get(`${this.baseUrl}/${this.typesPath}`)
                 .map((res: Response) => res.json()),
-            (permits, businessTypes) =>
+            (permits, businessCategories) =>
                 // Create an observable from the business types array so we can
                 // use Observable methods for grouping
-                Observable.from(businessTypes)
+                Observable.from(businessCategories)
                 .groupBy((businessType: BusinessType) => businessType.business_category)
                 .map((businessTypes: any) => {
                     let businessCategory: BusinessCategory = new BusinessCategory(businessTypes.key);

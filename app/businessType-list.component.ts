@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
 import { BusinessTypeService } from './businessTypes.service';
 import { BusinessCategory } from './businessCategory';
 
@@ -12,7 +11,7 @@ import { BusinessCategory } from './businessCategory';
     </section>
       <div class="business-categories">
           <!-- this is the new syntax for ng-repeat -->
-          <div class="business-category" *ngFor="let businessCategory of businessCategories | async">
+          <div class="business-category" *ngFor="let businessCategory of businessCategories">
             {{businessCategory.name}}
             <div class="business-type" *ngFor="let businessType of businessCategory.businessTypes">
                 {{businessType.business_type}}
@@ -30,17 +29,17 @@ import { BusinessCategory } from './businessCategory';
 })
 export class BusinessTypeListComponent implements OnInit {
     bar: any;
-    businessCategories: Observable<BusinessCategory[]>;
+    businessCategories: BusinessCategory[];
     errorMessage: string = '';
     isLoading: boolean = true;
 
     constructor(private businessTypesService: BusinessTypeService) {}
 
     ngOnInit() {
-        this.businessCategories = this.businessTypesService.getBusinessCategories();
+        const categoriesObservable = this.businessTypesService.getBusinessCategories();
 
-        this.businessCategories.subscribe(
-            () => {},
+        categoriesObservable.subscribe(
+            businessCategories => this.businessCategories = businessCategories,
             error => this.errorMessage = error,
             () => this.isLoading = false
         );
