@@ -1,9 +1,9 @@
-<section class="container">
+<!-- <section class="container">
   <section *ngIf="isLoading && !errorMessage">
     Retrieving data from data.cityofgainesville.org...
   </section>
   <div class=" business-categories">
-    <!-- this is the new syntax for ng-repeat -->
+    this is the new syntax for ng-repeat
     <div class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories">
       <div class="business-category-name">{{businessCategory.name}}</div>
       
@@ -24,5 +24,15 @@
   </div>
   <section *ngIf="errorMessage">
     {{errorMessage}}
+  </section>
+</section> -->
+<section>
+  <section *ngIf="isLoading && !errorMessage">
+      Retrieving data from data.cityofgainesville.org...
+  </section>
+  <section class="container">
+    <div class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories">{{businessCategory.name}}</div>
+    <div class="business-category-type" *ngFor="let businessType of businessCategory.businessTypes"></div>
+    
   </section>
 </section>
