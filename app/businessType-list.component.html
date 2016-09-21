@@ -1,38 +1,21 @@
-<!-- <section class="container">
-  <section *ngIf="isLoading && !errorMessage">
-    Retrieving data from data.cityofgainesville.org...
-  </section>
-  <div class=" business-categories">
-    this is the new syntax for ng-repeat
-    <div class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories">
-      <div class="business-category-name">{{businessCategory.name}}</div>
-      
-      <div class="col-md-6 bussiness-type-column" >
-        
-        <li class="business-type" *ngFor="let businessType of businessCategory.businessTypes">
-          {{businessType.business_type}}
-          <ul>
-            <li> <a href="url" class="permit" *ngFor="let permit of businessType.permits">
-              {{permit.friendly_name}}
-            </a></li>
-          </ul>
-        </li>
-        
-      </div>
+<div class="row">
+    <div class="col-md-6 selected-business-category-column" *ngIf="selectedbusinessCategory">
+        <ul>
+            <li class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories" (click)="onSelect(businessCategory)" [class.selected]="businessCategory === selectedbusinessCategory">{{businessCategory.name}}
+            </li>
+        </ul>
     </div>
-    <br>
-  </div>
-  <section *ngIf="errorMessage">
-    {{errorMessage}}
-  </section>
-</section> -->
-<section>
-  <section *ngIf="isLoading && !errorMessage">
-      Retrieving data from data.cityofgainesville.org...
-  </section>
-  <section class="container">
-    <div class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories">{{businessCategory.name}}</div>
-    <div class="business-category-type" *ngFor="let businessType of businessCategory.businessTypes"></div>
-    
-  </section>
-</section>
+    <div class="col-md-6 selected-business-types-permits-column" *ngIf="selectedbusinessCategory">
+        <div>
+            <h2 [@flyInOut]="selectedbusinessCategory">
+        {{selectedbusinessCategory.name | uppercase}}
+        </h2>
+            <div class="business-type" *ngFor="let businessType of selectedbusinessCategory.businessTypes" [@flyInOut]="selectedbusinessCategory">
+                <div class="business-type-values">{{businessType.business_type | uppercase}} </div>
+                <div class="permit" *ngFor="let permit of businessType.permits">
+                    <a href="index.html" class="permit-name">{{permit.friendly_name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
