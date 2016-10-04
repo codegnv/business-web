@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessType } from './businessType';
 import { BusinessTypeService } from './businessTypes.service';
-import { BusinessCategory } from './businessCategory';
 
 @Component({
   selector: 'businesstype-list',
@@ -12,10 +10,13 @@ import { BusinessCategory } from './businessCategory';
     </section>
       <div class="business-categories">
           <!-- this is the new syntax for ng-repeat -->
-          <div class="business-category" *ngFor="let businesscategory of businesscategories">
-            {{businesscategory.name}}
-            <div class="business-type" *ngFor="let businesstype of businesscategory.businessTypes">
-                {{businesstype.business_type}}
+          <div class="business-category" *ngFor="let businessCategory of finalBusinessCategories">
+            {{businessCategory.name}}
+            <div class="business-type" *ngFor="let businessType of businessCategory.businessTypes">
+                {{businessType.business_type}}
+                <div class="permit" *ngFor="let permit of businessType.permits">
+                    {{permit.friendly_name}}
+                </div>
             </div>
           </div>
       </div>
@@ -26,19 +27,18 @@ import { BusinessCategory } from './businessCategory';
   `
 })
 export class BusinessTypeListComponent implements OnInit {
-  businesscategories: BusinessCategory[] = [];
-  errorMessage: string = '';
-  isLoading: boolean = true;
-  businessCategories: any = {};
+    finalBusinessCategories: any = [];
+    errorMessage: string = '';
+    isLoading: boolean = true;
 
-  constructor(private businessTypesService: BusinessTypeService) {}
+    constructor(private businessTypesService: BusinessTypeService) {}
 
-  ngOnInit() {
-    this.businessTypesService
-      .getAll()
-      .subscribe(
-         /* happy path */ b => this.businesscategories = b,
-         /* error path */ e => this.errorMessage = e,
-         /* onComplete */ () => this.isLoading = false);
-  }
+    ngOnInit() {
+        this.businessTypesService
+        .getAll()
+        .subscribe(
+             /* happy path */ b => this.finalBusinessCategories = b,
+             /* error path */ e => this.errorMessage = e,
+             /* onComplete */ () => this.isLoading = false);
+    }
 }
