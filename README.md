@@ -1,18 +1,40 @@
-# business
-Make it easier to start a business
+#Business
+C4GNV is a member brigade of Code for America, the goal of this project is to make it easier to start a business in Gainesville by providing people easy access to permits and zoning information.  The project is a light weight website written in Typescript and Angular 2, using open data sources as a persistent backend.
 
+The inspiration for this service is to eventually be able to expand to be like the [Business Portal for San Francisco](https://businessportal.sfgov.org/), however we're starting with just the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality.
+
+## Install
+You want to run this bad boy locally?  Let's do it.  
+
+###Install Tools
+-Install nodejs from https://nodejs.org/en/
+
+-Install npm from https://www.npmjs.com/
+
+-Install the latest version of GIT from https://git-scm.com/
+
+###Get That Repo
+From the command line execute `git clone https://github.com/c4gnv/business-web.git` to get this repository down to your local machine 
+
+###Install the Dependancies 
+Just run `npm install` in the project's root directory
+
+###Start it up
+Run `npm start` and head over to http://localhost:8080/ you should now see the latest and greatest.
+
+#How This all Fits Together
 
 ## Possible opendata service
 
-https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/pp75-zh6w
+[Permits by business type](https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/pp75-zh6w)
 
-https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g
+[Test dataset](https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g)
 
 ## JSON Source data for associations, maintained by the city
 
-https://data.cityofgainesville.org/resource/pp75-zh6w.json
+[Business Types](https://data.cityofgainesville.org/resource/pp75-zh6w.json)
 
-https://data.cityofgainesville.org/resource/mfe4-6q3g.json
+[Business Permits](https://data.cityofgainesville.org/resource/mfe4-6q3g.json)
 
 ### Architecture Diagram
 
