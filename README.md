@@ -32,9 +32,9 @@ Run `npm start` and head over to http://localhost:8080/ you should now see the l
 
 ## JSON Source data for associations, maintained by the city
 
-[Associating Permits to Businesses](https://data.cityofgainesville.org/resource/pp75-zh6w.json)
+[Business Types](https://data.cityofgainesville.org/resource/pp75-zh6w.json)
 
-[Associating Permits to Businesses](https://data.cityofgainesville.org/resource/mfe4-6q3g.json)
+[Business Permits](https://data.cityofgainesville.org/resource/mfe4-6q3g.json)
 
 ### Architecture Diagram
 
