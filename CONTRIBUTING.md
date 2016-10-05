@@ -14,7 +14,9 @@ The team will prioritize issues and add to the project board as as appropriate.
 
 ## Pull Requests
 
-Each pull request should refer to a specific issue on the project board/issue tracker. 
+Each pull request should refer to a specific issue on the project board/issue tracker.
+
+### Feature Branches
 
 Feature branches should be named according to the issue:
 
@@ -27,6 +29,10 @@ OR
 For example:
 
 `alienlike/feature/issue-17`
+
+### Commit Messages
+
+Commit messages should begin with `issue-<issue-id>` followed by a brief description of changes
 
 ## Coding Guidelines
 
