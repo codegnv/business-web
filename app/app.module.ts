@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { routing } from './app.routes';
+import { routing, appRoutingProviders } from './app.routes';
 
 import { AppComponent }  from './app.component';
 import { BusinessTypeListComponent } from './businessType-list.component';
+import { IndexComponent } from './index.component';
 
 @NgModule({
   imports: [ BrowserModule, routing, FormsModule, HttpModule],
-  declarations: [ AppComponent, BusinessTypeListComponent],
+  declarations: [ AppComponent, BusinessTypeListComponent, IndexComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
