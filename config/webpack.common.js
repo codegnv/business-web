@@ -37,11 +37,17 @@ module.exports = {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
         loader: 'raw'
+      },
+       {
+        test: /\.less$/,
+        exclude: helpers.root('src', 'app'),
+        loader: ExtractTextPlugin.extract("style", "css?sourceMap!less-loader")
       }
     ]
   },
 
   plugins: [
+    new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),

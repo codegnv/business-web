@@ -1,0 +1,35 @@
+.selected {
+  background-color: #04B0FA !important;
+  color: white;
+}
+.h2 {
+	text-align: center;
+}
+.selected-business-category-column .ul {
+  list-style-type: none;
+}
+.business-category-row{
+	font-size: 1.1em;
+	padding: 4px;
+	width: auto;
+	font-family: sans-serif;
+	font-weight: bold;
+	background-color: darkblue;
+	color:white;
+}
+
+
+.selected-business-types-permits-column{
+	background-color: white;
+	border: 2px outset black;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+	padding: 5px 5px 15px  5px;
+	position: relative;
+}
+
+.business-type{}
+.business-type-values{}
+.permit{}
+.permit-name{}
+
+

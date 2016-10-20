@@ -3,10 +3,7 @@ import { BusinessTypeService } from './businessTypes.service';
 
 @Component({
   selector: 'my-app',
-  template: `
-  <h1> {{title}} </h1>
-  <router-outlet>
-  `,
+  templateUrl: './app.component.html',
   providers: [BusinessTypeService]
 })
 export class AppComponent {

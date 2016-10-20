@@ -1,4 +1,7 @@
 /* Master Styles */
+@import './header.component.css';
+@import './businessType-list.component.css';
+
 h1 {
   color: #369; 
   font-family: Arial, Helvetica, sans-serif;   
