@@ -1,5 +1,5 @@
 /* Master Styles */
-@import './index.component.css';
+@import './header.component.css';
 @import './businessType-list.component.css';
 
 h1 {
