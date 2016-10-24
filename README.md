@@ -1,12 +1,11 @@
 #Business
 C4GNV is a member brigade of Code for America, the goal of this project is to make it easier
 to start a business in Gainesville by providing people easy access to permits and zoning information.
-The project is a light weight website written in Typescript and Angular 2, using open data sources
-as a persistent backend.
+The project is a lightweight website written in [Typescript](https://www.typescriptlang.org/) and Angular 2, using open data sources as a persistent backend.
 
-The inspiration for this service is to eventually be able to expand to be like the
+The inspiration for this service is to eventually be able to expand to be like 
 [Business Portal for San Francisco](https://businessportal.sfgov.org/), however we're
-starting with just the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality.
+starting with the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality only.
 
 ## Contributing
 
@@ -27,7 +26,7 @@ You want to run this bad boy locally?  Let's do it.
 From the command line execute `git clone https://github.com/c4gnv/business-web.git` to get this repository down to your local machine
 
 ###Install the Dependancies
-Just run `npm install` in the project's root directory
+Run `npm install` in the project's root directory
 
 ###Start it up
 Run `npm start` and head over to http://localhost:8080/ you should now see the latest and greatest.
