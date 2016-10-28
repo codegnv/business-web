@@ -1,0 +1,53 @@
+
+.page-header, .bp-header{
+	margin: 0;
+	padding: 0px 0px 20px 0px;
+	height: auto;
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+	background-color: #f9c001;	
+	overflow: hidden;
+}
+.bp-nav{
+	background-color: #f9c001;
+	border: 0px;
+	height: 100px;
+}
+.bp-nav-container{
+	padding-left: 60px;
+	padding-right: 60px;
+}
+.bp-nav-hr{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+	border-top: 1.5px solid #eee;
+}
+.bp-navlink{
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: white !important;
+}
+.bp-navlink:hover{
+	background-color: transparent;
+}
+.bp-navlink-text{
+	margin:0;
+}
+.bp-header-text{
+	color: white;
+	font-weight: normal;
+	font-size: 1.5em
+}
+.bp-brand{
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+.bp-search{
+	height: 55px;
+}

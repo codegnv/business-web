@@ -1,0 +1,62 @@
+.bp-list-container {
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.bp-list-category-header {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 15px;
+    padding-right: 15px;
+    width: 95%;
+}
+.bp-list-category-subheader {
+    padding-top: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.bp-list-permits-header {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-right: 15px;
+}
+.selected {
+    background-color: #04B0FA !important;
+    color: white;
+}
+.h2 {
+    text-align: center;
+}
+.selected-business-category-column .ul {
+    list-style-type: none;
+    margin-right: -20px;
+}
+.business-category-row {
+    font-size: 1.1em;
+    padding: 4px;
+    width: auto;
+    font-family: sans-serif;
+    font-weight: normal;
+    color: black;
+}
+.selected-business-types-permits-column {
+    background-color: white;
+    /*border: 1px outset white;*/
+    /*box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);*/
+    
+    padding: 5px 5px 15px 5px;
+    /*margin-top: 15px;*/
+    position: relative;
+}
+.business-type {} .business-type-values {
+    border-top: 1px solid gray;
+    font-weight: bolder;
+    font-size: 1.1em;
+    color: #2d6ae2;
+}
+.permit {} .permit-name {
+    color: gray;
+}
