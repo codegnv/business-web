@@ -6,8 +6,8 @@ import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routes';
 
 import { AppComponent }  from './app.component';
-import { BusinessTypeListComponent } from './businessType-list.component';
-import { HeaderComponent } from './header.component';
+import { BusinessTypeListComponent } from './components/businessType-list.component';
+import { HeaderComponent } from './components/header.component';
 
 @NgModule({
   imports: [ BrowserModule, routing, FormsModule, HttpModule],

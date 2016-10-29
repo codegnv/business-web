@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BusinessTypeService } from './businessTypes.service';
-import { BusinessCategory } from './businessCategory';
-import { BusinessType } from './businessType';
+import { BusinessTypeService } from '../businessTypes.service';
+import { BusinessCategory } from '../businessCategory';
+import { BusinessType } from '../businessType';
 import {
   Input,
   trigger,

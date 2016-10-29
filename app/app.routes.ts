@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from './header.component';
-import { BusinessTypeListComponent } from './businessType-list.component';
+import { HeaderComponent } from './components/header.component';
+import { BusinessTypeListComponent } from './components/businessType-list.component';
 
 // Route config let's you map routes to components
 const routes: Routes = [

@@ -1,6 +1,6 @@
 /* Master Styles */
-@import './header.component.css';
-@import './businessType-list.component.css';
+@import './components/header.component.css';
+@import './components/businessType-list.component.css';
 
 h1 {
   color: #369; 
@@ -13,7 +13,7 @@ h2, h3 {
   font-weight: lighter;
 }
 body { 
-  margin: 2em; 
+  /*margin: 2em; */
 }
 body, input[text], button { 
   color: #888; 
