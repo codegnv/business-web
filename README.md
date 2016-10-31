@@ -3,7 +3,7 @@ C4GNV is a member brigade of Code for America, the goal of this project is to ma
 to start a business in Gainesville by providing people easy access to permits and zoning information.
 The project is a lightweight website written in [Typescript](https://www.typescriptlang.org/) and Angular 2, using open data sources as a persistent backend.
 
-The inspiration for this service is to eventually be able to expand to be like 
+The inspiration for this service is to eventually be able to expand to be like the 
 [Business Portal for San Francisco](https://businessportal.sfgov.org/), however we're
 starting with the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality only.
 
