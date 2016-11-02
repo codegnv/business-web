@@ -39,9 +39,12 @@
 	margin:0;
 }
 .bp-header-text{
-	color: white;
-	font-weight: normal;
-	font-size: 1.5em
+	color: white;	
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 42px;
+	text-align: left;
+	margin-bottom: 20px;
 }
 .bp-brand{
 	border-radius: 50%;
@@ -49,5 +52,11 @@
 	height: 20px;
 }
 .bp-search{
-	height: 55px;
+	height: 75px;
+}
+.input-group {
+	margin-bottom: 100px;
+}
+button.bp-search {
+	border-left: none;
 }
