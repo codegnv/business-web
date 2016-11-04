@@ -1,30 +1,31 @@
 /* Master Styles */
 @import './components/header.component.css';
 @import './components/businessType-list.component.css';
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 
 h1 {
   color: #369; 
-  font-family: Arial, Helvetica, sans-serif;   
+  font-family: 'Work Sans', sans-serif;
   font-size: 250%;
 }
 h2, h3 { 
   color: #444;
-  font-family: Arial, Helvetica, sans-serif;   
-  font-weight: lighter;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
 }
 body { 
   /*margin: 2em; */
 }
 body, input[text], button { 
   color: #888; 
-  font-family: Cambria, Georgia; 
+  font-family: 'Work Sans', sans-serif;
 }
 a {
   cursor: pointer;
   cursor: hand;
 }
 button {
-  font-family: Arial;
+  font-family: 'Work Sans', sans-serif;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
@@ -141,7 +142,7 @@ nav a.router-link-active {
 
 /* everywhere else */
 * { 
-  font-family: Arial, Helvetica, sans-serif; 
+  font-family: 'Work Sans', sans-serif;
 }
 
 .ng-valid[required] {
@@ -159,13 +160,13 @@ nav a.router-link-active {
 }
 
 .business-category {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .business-type {
-    font-weight: normal;
+    font-weight: 400;
 }
 
-.permit {
-    font-style: italic;
-}
+/*.permit {
+   font-style: italic;
+}*/
