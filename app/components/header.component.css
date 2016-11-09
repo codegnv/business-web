@@ -1,62 +1,61 @@
-
 .page-header, .bp-header{
-	margin: 0;
-	padding: 0px 0px 20px 0px;
-	height: auto;
-	margin-left: auto;
+    margin: 0;
+    padding: 0px 0px 20px 0px;
+    height: auto;
+    margin-left: auto;
     margin-right: auto;
     text-align: center;
-	background-color: #f9c001;	
-	overflow: hidden;
+    background-color: #f9c001;
+    overflow: hidden;
 }
 .bp-nav{
-	background-color: #f9c001;
-	border: 0px;
-	height: 100px;
+    background-color: #f9c001;
+    border: 0px;
+    height: 100px;
 }
 .bp-nav-container{
-	padding-left: 60px;
-	padding-right: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 .bp-nav-hr{
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	width: 100%;
-	border-top: 1.5px solid #eee;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    border-top: 1.5px solid #eee;
 }
 .bp-navlink{
-	background-color: transparent;
-	font-weight: bold;
-	font-size: 1.1em;
-	color: white !important;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: white !important;
 }
 .bp-navlink:hover{
-	background-color: transparent;
+    background-color: transparent;
 }
 .bp-navlink-text{
-	margin:0;
+    margin:0;
 }
 .bp-header-text{
-	color: white;	
-	font-size: 30px;
-	font-weight: 300;
-	line-height: 42px;
-	text-align: left;
-	margin-bottom: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 42px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 .bp-brand{
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
 }
 .bp-search{
-	height: 75px;
+    height: 75px;
 }
 .input-group {
-	margin-bottom: 100px;
+    margin-bottom: 100px;
 }
 button.bp-search {
-	border-left: none;
+    border-left: none;
 }
