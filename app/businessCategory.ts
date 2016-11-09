@@ -1,6 +1,6 @@
 import { BusinessType } from './businessType';
 
 export interface BusinessCategory {
-    name: string;
+    readonly name: string;
     businessTypes: BusinessType[];
 }
