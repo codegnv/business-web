@@ -1,7 +1,7 @@
 .bp-list-container {
     padding-top: 25px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .bp-list-category-header {
     border-bottom: 2px solid black;
@@ -34,14 +34,26 @@
     list-style-type: none;
     margin-right: -20px;
 }
-.business-category-row {
-    font-size: 1.1em;
+.bp-category-row {
+    font-size: 1rem;
     padding: 4px;
     width: auto;
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     color: black;
 }
+.bp-category-row:after {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    font-family: "FontAwesome";
+    content: '\f105';
+    color: #7b7b7b;
+}
+
+.bp-category-row 
 .selected-business-types-permits-column {
     background-color: white;
     /*border: 1px outset white;*/

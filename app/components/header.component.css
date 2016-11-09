@@ -5,18 +5,17 @@
 	height: auto;
 	margin-left: auto;
     margin-right: auto;
-    text-align: center;
-	background-color: #f9c001;	
+	background-color: #f9c001;
 	overflow: hidden;
 }
 .bp-nav{
 	background-color: #f9c001;
 	border: 0px;
-	height: 100px;
+	/*height: 40px;*/
 }
 .bp-nav-container{
-	padding-left: 60px;
-	padding-right: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .bp-nav-hr{
 	margin-left: auto;
@@ -28,8 +27,8 @@
 }
 .bp-navlink{
 	background-color: transparent;
-	font-weight: bold;
-	font-size: 1.1em;
+	font-weight: 600;
+	font-size: 1.1rem;
 	color: white !important;
 }
 .bp-navlink:hover{
@@ -40,23 +39,32 @@
 }
 .bp-header-text{
 	color: white;	
-	font-size: 30px;
-	font-weight: 300;
-	line-height: 42px;
-	text-align: left;
-	margin-bottom: 20px;
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 450px;
 }
 .bp-brand{
 	border-radius: 50%;
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
+	margin-right: 0rem;
 }
 .bp-search{
-	height: 75px;
+	max-width: 450px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+}
+.bp-search-input{
+	height: 50px;
 }
 .input-group {
-	margin-bottom: 100px;
+	margin-bottom: 20px;
 }
-button.bp-search {
+button.bp-search-btn {
 	border-left: none;
 }

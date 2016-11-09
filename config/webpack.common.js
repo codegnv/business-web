@@ -28,6 +28,11 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
