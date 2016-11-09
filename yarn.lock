@@ -36,6 +36,10 @@
   version "3.4.34"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.4.34.tgz#d5335792823bb09cddd5e38c3d211b709183854d"
 
+"@ng-bootstrap/ng-bootstrap@^1.0.0-alpha.11":
+  version "1.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@ng-bootstrap/ng-bootstrap/-/ng-bootstrap-1.0.0-alpha.11.tgz#71b93e8772b963e88cbb7472f7cd8fda697b09eb"
+
 "@types/core-js@^0.9.34":
   version "0.9.34"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.34.tgz#72c521d8e59fdaa8b65f76db71fa53c82c7c21c5"
@@ -82,6 +86,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular2-in-memory-web-api@0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/angular2-in-memory-web-api/-/angular2-in-memory-web-api-0.0.21.tgz#20b4ada639343862da3274d41f7a0c66996bf619"
 
 angular2-template-loader@^0.4.0:
   version "0.4.0"
@@ -258,9 +266,12 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap-css-only@^3.3.6:
-  version "3.3.6"
-  resolved "https://registry.yarnpkg.com/bootstrap-css-only/-/bootstrap-css-only-3.3.6.tgz#2c9fb974c40016d35ded0e4f070b363bce090768"
+bootstrap@4.0.0-alpha.5:
+  version "4.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-alpha.5.tgz#a126b648c3bd2f52b8fad4bbc5e2d0ad2abf7064"
+  dependencies:
+    jquery "1.9.1 - 3"
+    tether "^1.3.7"
 
 brace-expansion@^1.0.0:
   version "1.1.6"
@@ -940,9 +951,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-font-awesome@4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.6.1.tgz#547265fb4c45bbed90ab8bc4f77a97b37b852a12"
+font-awesome@^4.6.1:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
 
 for-in@^0.1.5:
   version "0.1.6"
@@ -1387,6 +1398,10 @@ jodid25519@^1.0.0:
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
   dependencies:
     jsbn "~0.1.0"
+
+"jquery@1.9.1 - 3":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
 
 js-base64@^2.1.9:
   version "2.1.9"
@@ -2481,9 +2496,9 @@ ripemd160@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-0.2.0.tgz#2bf198bde167cacfa51c0a928e84b68bbe171fce"
 
-rxjs@^5.0.0-rc.1:
-  version "5.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.2.tgz#d38206f50eeb1e77b0832a74c1c2adeeed5ec2b7"
+rxjs@5.0.0-beta.12:
+  version "5.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-beta.12.tgz#cdfde2d8c4639d20ae7794bff8fddf32da7ad337"
   dependencies:
     symbol-observable "^1.0.1"
 
@@ -2738,6 +2753,10 @@ tar@~2.2.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+tether@^1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/tether/-/tether-1.3.7.tgz#65578104741694f9672c808eae04a9adae7b0304"
 
 through@~2.3.6:
   version "2.3.8"

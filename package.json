@@ -19,10 +19,12 @@
     "@angular/platform-browser": "^2.1.2",
     "@angular/platform-browser-dynamic": "^2.1.2",
     "@angular/router": "^3.1.2",
-    "bootstrap-css-only": "^3.3.6",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.11",
+    "angular2-in-memory-web-api": "0.0.21",
+    "bootstrap": "4.0.0-alpha.5",
     "core-js": "^2.4.0",
-    "font-awesome": "4.6.1",
-    "rxjs": "^5.0.0-rc.1",
+    "font-awesome": "^4.6.1",
+    "rxjs": "5.0.0-rc.2",
     "zone.js": "^0.6.17"
   },
   "devDependencies": {
