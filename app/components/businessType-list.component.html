@@ -1,15 +1,21 @@
 <section class="bp-list-container">
     <div class="row">
-        <div class="col-md-4 selected-business-category-column" *ngIf="selectedbusinessCategory">
+        <div class="col-md-4 selected-business-category-column">
             <div class="bp-list-category-header">REFINE YOUR RESULTS</div>
-            <div class="bp-list-category-subheader">Filter by Category</div>
-            <ul>
-                <li class="business-category-row" *ngFor="let businessCategory of finalBusinessCategories" (click)="onSelect(businessCategory)" [class.selected]="businessCategory === selectedbusinessCategory">
+            <div  class="bp-list-category-subheader">Filter by Category</div>
+            <ul class="list-group">
+                <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories" (click)="onSelect(businessCategory)" [class.selected]="businessCategory === selectedbusinessCategory">
                     {{businessCategory.name}}
                 </li>
+                <div *ngIf="selectedbusinessCategory">
+                    <ul class="bp-list-types">
+                        <li *ngFor="let businessType of selectedbusinessCategory.businessTypes">
+                            <div>{{businessType.business_type | uppercase}}</div>
+                        </li>
+                    </ul>
+                </div>
             </ul>
         </div>
-
         <div class="col-md-8 selected-business-types-permits-column" *ngIf="selectedbusinessCategory">
             <div class="bp-list-permits-header">PERMITS</div>
             <div>
