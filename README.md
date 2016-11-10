@@ -1,9 +1,14 @@
-#Business
+[![Build Status](https://travis-ci.org/c4gnv/business-web.svg?branch=Bjorn248%2Ffeature%2Fissue-54)](https://travis-ci.org/c4gnv/business-web)
+
+# Latest Dev Build
+[http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/](http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/)
+
+# Business Portal
 C4GNV is a member brigade of Code for America, the goal of this project is to make it easier
 to start a business in Gainesville by providing people easy access to permits and zoning information.
 The project is a lightweight website written in [Typescript](https://www.typescriptlang.org/) and Angular 2, using open data sources as a persistent backend.
 
-The inspiration for this service is to eventually be able to expand to be like the 
+The inspiration for this service is to eventually be able to expand to be like the
 [Business Portal for San Francisco](https://businessportal.sfgov.org/), however we're
 starting with the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality only.
 
@@ -13,7 +18,7 @@ We welcome your contribution! Please see our
 [contributing guidelines](https://github.com/c4gnv/business-web/blob/develop/CONTRIBUTING.md).
 
 ## Install
-You want to run this bad boy locally?  Let's do it.  
+You want to run this bad boy locally?  Let's do it.
 
 ###Install Tools
 -Install nodejs from https://nodejs.org/en/
