@@ -4,6 +4,14 @@ node_js:
 branches:
     only:
     - develop
+    - Bjorn248/feature/issue-54
+before_install:
+    - pip install --user awscli
+    - export PATH=$PATH:$HOME/.local/bin
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
+before_deploy:
+    aws s3 rm s3://business-dev.c4gnv.com/ --recursive --region us-east-1
 script: npm run build
 
 deploy:
@@ -17,7 +25,7 @@ deploy:
     local_dir: build
     detect_encoding: true
     on:
-        branch: develop
+        branch: Bjorn248/feature/issue-54
 notifications:
     email:
         on_failure: always
