@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+    - stable
+branches:
+    only:
+    - develop
+script: npm run build
+
+deploy:
+    provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Declared in travis build settings
+    secret_access_key: $AWS_SECRET_KEY # Declared in travis build settings
+    bucket: business-dev.c4gnv.com
+    cache_control: "max-age=604800"
+    skip_cleanup: true
+    region: "us-east-1"
+    local_dir: build
+    detect_encoding: true
+    on:
+        branch: develop
+notifications:
+    email:
+        on_failure: always
