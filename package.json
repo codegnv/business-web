@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "^2.1.2",
     "@angular/router": "^3.1.2",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.11",
-    "angular2-in-memory-web-api": "0.0.21",
     "bootstrap": "4.0.0-alpha.5",
     "core-js": "^2.4.0",
     "font-awesome": "^4.6.1",
@@ -30,7 +29,6 @@
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/core-js": "^0.9.34",
-    "@types/isomorphic-fetch": "0.0.30",
     "@types/jasmine": "^2.5.37",
     "@types/node": "^6.0.46",
     "angular2-template-loader": "^0.4.0",
@@ -43,7 +41,6 @@
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
-    "typed-graphql": "^1.0.1",
     "typescript": "^2.0.6",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
