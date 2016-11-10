@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/c4gnv/business-web.svg?branch=Bjorn248%2Ffeature%2Fissue-54)](https://travis-ci.org/c4gnv/business-web)
+[![Build Status](https://travis-ci.org/c4gnv/business-web.svg?branch=develop)](https://travis-ci.org/c4gnv/business-web)
 
 # Latest Dev Build
 [http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/](http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/)
