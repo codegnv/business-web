@@ -4,7 +4,6 @@ node_js:
 branches:
     only:
     - develop
-    - Bjorn248/feature/issue-54
 before_install:
     - pip install --user awscli
     - export PATH=$PATH:$HOME/.local/bin
@@ -25,7 +24,7 @@ deploy:
     local_dir: build
     detect_encoding: true
     on:
-        branch: Bjorn248/feature/issue-54
+        branch: develop
 notifications:
     email:
         on_failure: always
