@@ -21,20 +21,27 @@ We welcome your contribution! Please see our
 You want to run this bad boy locally?  Let's do it.
 
 ###Install Tools
--Install nodejs from https://nodejs.org/en/
+* Install nodejs from https://nodejs.org/en/
 
--Install npm from https://www.npmjs.com/
+* Install npm from https://www.npmjs.com/
+ * It is suggested that you use [yarn](https://yarnpkg.com/)
+  as an alternative to `npm` for package management. With
+  `npm`, you can install this using `npm install -g yarn`,
+  or follow yarn's own documentation to figure out how you
+  want to install it.  This documentation will refer to
+  `yarn` in place of `npm`, but they can be used in the
+  same way.
 
--Install the latest version of GIT from https://git-scm.com/
+* Install the latest version of GIT from https://git-scm.com/
 
 ###Get That Repo
 From the command line execute `git clone https://github.com/c4gnv/business-web.git` to get this repository down to your local machine
 
 ###Install the Dependancies
-Run `npm install` in the project's root directory
+Run `yarn install` in the project's root directory
 
 ###Start it up
-Run `npm start` and head over to http://localhost:8080/ you should now see the latest and greatest.
+Run `yarn start` and head over to http://localhost:8080/ you should now see the latest and greatest.
 
 #How This all Fits Together
 =======
