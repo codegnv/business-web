@@ -8,7 +8,7 @@
                     {{businessCategory.name}}
                 </li>
                 <div *ngIf="selectedbusinessCategory">
-                    <ul style="list-style-type: none;" >
+                    <ul class="bp-list-types">
                         <li *ngFor="let businessType of selectedbusinessCategory.businessTypes">
                             <div>{{businessType.business_type | uppercase}}</div>
                         </li>
