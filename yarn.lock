@@ -32,9 +32,17 @@
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-3.1.2.tgz#1046c943ace795027e2e5057df8c897da968fcd6"
 
+"@types/chai@^3.4.34":
+  version "3.4.34"
+  resolved "https://registry.yarnpkg.com/@types/chai/-/chai-3.4.34.tgz#d5335792823bb09cddd5e38c3d211b709183854d"
+
 "@types/core-js@^0.9.34":
   version "0.9.34"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.34.tgz#72c521d8e59fdaa8b65f76db71fa53c82c7c21c5"
+
+"@types/isomorphic-fetch@0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@types/isomorphic-fetch/-/isomorphic-fetch-0.0.30.tgz#a21717624cde9a48c2db53a4e500fc5c32a99bbc"
 
 "@types/jasmine@^2.5.37":
   version "2.5.37"
@@ -2788,6 +2796,10 @@ type-is@~1.6.13:
     media-typer "0.3.0"
     mime-types "~2.1.11"
 
+typed-graphql@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/typed-graphql/-/typed-graphql-1.0.2.tgz#4c0f788775d552df4d4ec3d73f25469252f40fb8"
+
 typescript@^2.0.6:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.1.1.tgz#41c2b64472f529331b2055c0424862b44ce58d42"
@@ -2946,9 +2958,9 @@ webpack-dev-server@^1.14.1:
     supports-color "^3.1.1"
     webpack-dev-middleware "^1.4.0"
 
-webpack-merge@^0.14.0:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-0.14.1.tgz#d6bfe6d9360a024e1e7f8e6383ae735f1737cd23"
+webpack-merge:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-0.15.0.tgz#f6a930516d5eccba0baabeb30ea96b6a6737c193"
   dependencies:
     lodash.find "^3.2.1"
     lodash.isequal "^4.2.0"
