@@ -72,3 +72,6 @@
 .permit {} .permit-name {
     color: gray;
 }
+.bp-list-types {
+    list-style-type: none;
+}

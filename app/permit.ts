@@ -1,5 +1,5 @@
 export interface Permit {
-  friendly_name: string;
-  url: string;
-  permit_name: string;
+    readonly friendly_name: string;
+    readonly url: string;
+    readonly permit_name: string;
 }
