@@ -1,70 +1,69 @@
-
-.page-header, .bp-header{
-	margin: 0;
-	padding: 0px 0px 20px 0px;
-	height: auto;
-	margin-left: auto;
+.page-header, .bp-header {
+    margin: 0;
+    padding: 0px 0px 20px 0px;
+    height: auto;
+    margin-left: auto;
     margin-right: auto;
-	background-color: #f9c001;
-	overflow: hidden;
+    background-color: #f9c001;
+    overflow: hidden;
 }
-.bp-nav{
-	background-color: #f9c001;
-	border: 0px;
-	/*height: 40px;*/
+.bp-nav {
+    background-color: #f9c001;
+    border: 0px;
+    /*height: 40px;*/
 }
-.bp-nav-container{
-	padding-left: 20px;
-	padding-right: 20px;
+.bp-nav-container {
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.bp-nav-hr{
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	width: 100%;
-	border-top: 1.5px solid #eee;
+.bp-nav-hr {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    border-top: 1.5px solid #eee;
 }
-.bp-navlink{
-	background-color: transparent;
-	font-weight: 600;
-	font-size: 1.1rem;
-	color: white !important;
+.bp-navlink {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white !important;
 }
-.bp-navlink:hover{
-	background-color: transparent;
+.bp-navlink:hover {
+    background-color: transparent;
 }
-.bp-navlink-text{
-	margin:0;
+.bp-navlink-text {
+    margin:0;
 }
-.bp-header-text{
-	color: white;	
-	font-size: 1.5rem;
-	font-weight: 400;
-	text-align: center;
-	margin-left: auto;
+.bp-header-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin-left: auto;
     margin-right: auto;
     display: block;
     max-width: 450px;
 }
-.bp-brand{
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	margin-right: 0rem;
+.bp-brand {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 0rem;
 }
-.bp-search{
-	max-width: 450px;
-	margin-right: auto;
-	margin-left: auto;
-	padding: 10px;
+.bp-search {
+    max-width: 450px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
 }
-.bp-search-input{
-	height: 50px;
+.bp-search-input {
+    height: 50px;
 }
 .input-group {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 button.bp-search-btn {
-	border-left: none;
+    border-left: none;
 }

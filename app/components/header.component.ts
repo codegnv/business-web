@@ -3,5 +3,4 @@
     selector: 'header',
     templateUrl: './header.component.html',
 })
-export class HeaderComponent {
-}
+export class HeaderComponent { }

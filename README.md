@@ -1,9 +1,14 @@
-#Business
+[![Build Status](https://travis-ci.org/c4gnv/business-web.svg?branch=Bjorn248%2Ffeature%2Fissue-54)](https://travis-ci.org/c4gnv/business-web)
+
+# Latest Dev Build
+[http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/](http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/)
+
+# Business Portal
 C4GNV is a member brigade of Code for America, the goal of this project is to make it easier
 to start a business in Gainesville by providing people easy access to permits and zoning information.
 The project is a lightweight website written in [Typescript](https://www.typescriptlang.org/) and Angular 2, using open data sources as a persistent backend.
 
-The inspiration for this service is to eventually be able to expand to be like the 
+The inspiration for this service is to eventually be able to expand to be like the
 [Business Portal for San Francisco](https://businessportal.sfgov.org/), however we're
 starting with the [Permit Locator](https://businessportal.sfgov.org/permits-licenses) functionality only.
 
@@ -13,23 +18,30 @@ We welcome your contribution! Please see our
 [contributing guidelines](https://github.com/c4gnv/business-web/blob/develop/CONTRIBUTING.md).
 
 ## Install
-You want to run this bad boy locally?  Let's do it.  
+You want to run this bad boy locally?  Let's do it.
 
 ###Install Tools
--Install nodejs from https://nodejs.org/en/
+* Install nodejs from https://nodejs.org/en/
 
--Install npm from https://www.npmjs.com/
+* Install npm from https://www.npmjs.com/
+ * It is suggested that you use [yarn](https://yarnpkg.com/)
+  as an alternative to `npm` for package management. With
+  `npm`, you can install this using `npm install -g yarn`,
+  or follow yarn's own documentation to figure out how you
+  want to install it.  This documentation will refer to
+  `yarn` in place of `npm`, but they can be used in the
+  same way.
 
--Install the latest version of GIT from https://git-scm.com/
+* Install the latest version of GIT from https://git-scm.com/
 
 ###Get That Repo
 From the command line execute `git clone https://github.com/c4gnv/business-web.git` to get this repository down to your local machine
 
 ###Install the Dependancies
-Run `npm install` in the project's root directory
+Run `yarn install` in the project's root directory
 
 ###Start it up
-Run `npm start` and head over to http://localhost:8080/ you should now see the latest and greatest.
+Run `yarn start` and head over to http://localhost:8080/ you should now see the latest and greatest.
 
 #How This all Fits Together
 =======
