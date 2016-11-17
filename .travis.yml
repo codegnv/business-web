@@ -13,6 +13,7 @@ before_deploy:
     aws s3 rm s3://business-dev.c4gnv.com/ --recursive --region us-east-1
 install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
+    - export PATH=$PATH:$HOME/.yarn/bin
     - yarn install
 script: yarn run build
 
