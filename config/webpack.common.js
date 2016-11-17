@@ -11,42 +11,46 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['', '.js', '.ts']
+        extensions: ['.js', '.ts']
     },
 
     module: {
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['ts', 'angular2-template-loader']
+                loaders: ['ts-loader', 'angular2-template-loader']
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader?minimize=false'
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file?name=assets/[name].[hash].[ext]'
+                loader: 'file-loader?name=assets/[name].[hash].[ext]'
             },
             {
                 test: /\.css$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
             },
             {
                 test: /\.css$/,
                 include: helpers.root('src', 'app'),
-                loader: 'raw'
+                loader: 'raw-loader'
             },
             {
                 test: /\.less$/,
                 exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract("style", "css?sourceMap!less-loader")
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap!less-loader' })
             }
         ]
     },
 
     plugins: [
+        new webpack.ContextReplacementPlugin(
+          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          __dirname
+        ),
         new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
