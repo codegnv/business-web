@@ -11,7 +11,11 @@ before_install:
     - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 before_deploy:
     aws s3 rm s3://business-dev.c4gnv.com/ --recursive --region us-east-1
-script: npm run build
+install:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+    - export PATH=$PATH:$HOME/.yarn/bin
+    - yarn install
+script: yarn run build
 
 deploy:
     provider: s3
