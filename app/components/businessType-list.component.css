@@ -10,8 +10,14 @@
 }
 .bp-list-container {
     padding-top: 25px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: block;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .bp-list-category-header {
     border-bottom: 2px solid black;
