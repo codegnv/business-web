@@ -6,6 +6,7 @@ import {
     trigger,
     style,
     transition,
+    state,
     animate
 } from '@angular/core';
 
@@ -21,11 +22,18 @@ import {
             ]),
         ]),
          trigger('flyOutIn', [
-            transition('void => *', [
-                style({transform: 'translateX(-100%)'}),
+            transition('* => void', [
+                style({transform: 'translateX(100%)'}),
                 animate(100)
             ]),
-        ])
+        ]),
+        trigger('collapseIn', [
+            state('in', style({height: '*'})),
+            transition('* => void', [
+              style({height: '*'}),
+              animate(400, style({height: 0}))
+            ])
+          ])
     ]
 
 })
@@ -33,11 +41,17 @@ export class BusinessTypeListComponent implements OnInit {
     finalBusinessCategories: any = [];
     errorMessage: string = '';
     isLoading: boolean = true;
+
+    businessCategoryTypesListState:string = 'closed';
+
     selectedbusinessCategory: BusinessCategory[] = [];
     selectedBusinessType: BusinessType[] = [];
     toggleAllBusinessTypes: boolean = true;
-    toggleBtypes: boolean = false;
-  
+    togglebusinessCategories: boolean =  true;            
+    toggleSelectedBusinesstype: boolean = false;
+
+    showSelectedBusinesstype: boolean = false;
+
     constructor(private businessTypesService: BusinessTypeService) {}
 
     ngOnInit() {
@@ -48,13 +62,26 @@ export class BusinessTypeListComponent implements OnInit {
             /* error path */ e => this.errorMessage = e,
             /* onComplete */ () => this.isLoading = false);
     }
-    onSelectBusinessCategory(BusinessCategory: BusinessCategory[]): void {            
-        this.selectedbusinessCategory = BusinessCategory;
-        this.toggleAllBusinessTypes = true;
-        this.toggleBtypes =  !this.toggleBtypes;
+    onClickTogglebusinessCategories(): void {
+        this.togglebusinessCategories = !this.togglebusinessCategories;
+    }
+    onSelectBusinessCategory(BusinessCategory: BusinessCategory[]): void { 
+            if ( BusinessCategory !== this.selectedbusinessCategory) {
+                this.showSelectedBusinesstype = true;
+                this.toggleAllBusinessTypes = true;
+                this.toggleSelectedBusinesstype =  false;
+                this.selectedbusinessCategory = BusinessCategory;
+                this.businessCategoryTypesListState = (this.businessCategoryTypesListState === 'closed' ? 'open':'closed');
+            } else {
+                this.selectedbusinessCategory = BusinessCategory;
+                this.toggleAllBusinessTypes = true;
+                this.toggleSelectedBusinesstype =  false;
+                this.showSelectedBusinesstype =  !this.showSelectedBusinesstype;
+                this.businessCategoryTypesListState = (this.businessCategoryTypesListState === 'closed' ? 'open':'closed');                
+            }
     }  
      onSelectBusinessCategoryType(BusinessCategoryType: BusinessType[]): void {
-        this.toggleAllBusinessTypes = false;
+        this.toggleAllBusinessTypes = false;        
         this.selectedBusinessType = BusinessCategoryType;
     }   
 }
