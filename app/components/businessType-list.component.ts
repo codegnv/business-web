@@ -22,9 +22,18 @@ import {
             transition('* => void', [
                 animate(100, style({transform: 'translateX(100%)'})),
             ]),
-        ])
-    ]
+        ]),
 
+        trigger('collapse', [
+            transition('void => *', [
+                style({height: 0}),
+                animate(100, style({height: '*'}))
+            ]),
+            transition('* => void', [
+                animate(100, style({height: 0}))
+            ]),
+        ]),
+    ]
 })
 export class BusinessTypeListComponent implements OnInit {
     finalBusinessCategories: any = [];

@@ -26,7 +26,7 @@
                     <div class="business-type-values" (click)="businessType.collapsed = !businessType.collapsed">
                         <span class="business-type-title" [ngClass]="{collapsed: businessType.collapsed}">{{businessType.business_type | uppercase}}</span>
                     </div>
-                    <div *ngIf="!businessType.collapsed">
+                    <div *ngIf="!businessType.collapsed" [@collapse]>
                         <div class="permit" *ngFor="let permit of businessType.permits">
                             <a href="index.html" class="permit-name">{{permit.friendly_name}}</a>
                         </div>
