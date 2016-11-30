@@ -5,20 +5,20 @@
 /*@import '../node_modules/font-awesome/css/font-awesome.css';*/
 
 h1 {
-  color: #369; 
+  color: #369;
   font-family: 'Work Sans', sans-serif;
   font-size: 250%;
 }
-h2, h3 { 
+h2, h3 {
   color: #444;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
 }
-body { 
+body {
   /*margin: 2em; */
 }
-body, input[text], button { 
-  color: #888; 
+body, input[text], button {
+  color: #888;
   font-family: 'Work Sans', sans-serif;
 }
 a {
@@ -39,7 +39,7 @@ button:hover {
 }
 button:disabled {
   background-color: #eee;
-  color: #aaa; 
+  color: #aaa;
   cursor: auto;
 }
 
@@ -142,7 +142,7 @@ nav a.router-link-active {
 }
 
 /* everywhere else */
-* { 
+* {
   font-family: 'Work Sans', sans-serif;
 }
 

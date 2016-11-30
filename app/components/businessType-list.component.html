@@ -23,9 +23,13 @@
                     {{selectedbusinessCategory.name | uppercase}}
                 </h2>
                 <div class="business-type" *ngFor="let businessType of selectedbusinessCategory.businessTypes" [@flyInOut]="selectedbusinessCategory">
-                    <div class="business-type-values">{{businessType.business_type | uppercase}}</div>
-                    <div class="permit" *ngFor="let permit of businessType.permits">
-                        <a href="index.html" class="permit-name">{{permit.friendly_name}}</a>
+                    <div class="business-type-values" (click)="businessType.collapsed = !businessType.collapsed">
+                        <span class="business-type-title" [ngClass]="{collapsed: businessType.collapsed}">{{businessType.business_type | uppercase}}</span>
+                    </div>
+                    <div *ngIf="!businessType.collapsed" [@collapse]>
+                        <div class="permit" *ngFor="let permit of businessType.permits">
+                            <a href="index.html" class="permit-name">{{permit.friendly_name}}</a>
+                        </div>
                     </div>
                 </div>
             </div>

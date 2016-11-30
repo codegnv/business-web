@@ -42,7 +42,7 @@
     font-weight: 400;
     color: black;
 }
-.bp-category-row:after {
+.bp-category-row:after, .business-type-title:after {
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -52,18 +52,31 @@
     content: '\f105';
     color: #7b7b7b;
 }
+.business-type-title::after {
+    top: -3px;
+    right: -15px;
+    content: '\f107';
+}
+.business-type-title {
+    cursor: pointer;
+    position: relative;
+}
+.business-type-title.collapsed::after {
+    cursor: pointer;
+    content: '\f105';
+}
 
 .bp-category-row 
 .selected-business-types-permits-column {
     background-color: white;
     /*border: 1px outset white;*/
     /*box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);*/
-    
+
     padding: 5px 5px 15px 5px;
     /*margin-top: 15px;*/
     position: relative;
 }
-.business-type {} .business-type-values {
+.business-type-values {
     border-top: 1px solid gray;
     font-weight: 700;
     font-size: 1.1em;
