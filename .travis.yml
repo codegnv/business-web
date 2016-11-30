@@ -14,7 +14,7 @@ before_deploy:
 install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - export PATH=$PATH:$HOME/.yarn/bin
-    - yarn install
+    - yarn install --no-progress
 script: yarn run build
 
 deploy:
