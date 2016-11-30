@@ -52,7 +52,7 @@ https://businessportal.sfgov.org/permits-licenses
 
 [Permits by business type](https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/i9px-haju)
 
-[Test dataset](https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g)
+[Permit Details](https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g)
 
 ## JSON Source data for associations, maintained by the city
 
