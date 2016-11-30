@@ -2,37 +2,61 @@
     <div class="row">
         <div class="col-md-4 selected-business-category-column">
             <div class="bp-list-category-header">REFINE YOUR RESULTS</div>
-            <div  class="bp-list-category-subheader">Filter by Category</div>
-            <ul class="list-group">
-                <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories" (click)="onSelect(businessCategory)" [class.selected]="businessCategory === selectedbusinessCategory">
-                    {{businessCategory.name}}
-                </li>
-                <div *ngIf="selectedbusinessCategory">
-                    <ul class="bp-list-types">
-                        <li *ngFor="let businessType of selectedbusinessCategory.businessTypes">
-                            <div>{{businessType.business_type | uppercase}}</div>
-                        </li>
-                    </ul>
+            <div class="bp-list-category-subheader">Filter by Category</div>
+            <ul class="fa-ul list-group">
+                <div class="bp-list-category-title bp-list-category-subheader no-select" (click)="onClickTogglebusinessCategories(); $event.stopPropagation();" [class.selected]="togglebusinessCategories">Business Category<i class="bp-category-title-icon fa" [ngClass]="{'fa-plus-circle': !togglebusinessCategories, 'fa-minus-circle': togglebusinessCategories}"></i>
+                </div>
+
+                <!-- Each Business Category -->
+                <div *ngIf="finalBusinessCategories && togglebusinessCategories">
+                    <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories" 
+                    (click)="onSelectBusinessCategory(businessCategory); $event.stopPropagation();" 
+                    [class.selected]="businessCategory === selectedbusinessCategory">                    
+                        <i class="bp-category-icon fa" [ngClass]="{'fa-chevron-right':toggleAllBusinessTypes || !toggleAllBusinessTypes,'fa-chevron-down':(selectedbusinessCategory === businessCategory) && showSelectedBusinesstype}" aria-hidden="false"></i>
+                        <label class="bp-category-name no-select">{{businessCategory.name}}</label>
+
+                        <!-- Each Selected Business Category Type-->
+                        <div id="SelectedBusinessCategoryTypeColumn" *ngIf="(selectedbusinessCategory === businessCategory) && showSelectedBusinesstype" >
+                            <ul class="bp-list-types" *ngIf="showSelectedBusinesstype" >
+                                <li class="bp-list-types-text no-select" *ngFor="let businessCategoryType of selectedbusinessCategory.businessTypes" (click)="onSelectBusinessCategoryType(businessCategoryType); $event.stopPropagation()" [class.selected]="businessCategoryType === selectedBusinessType"> {{businessCategoryType.business_type}}
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </div>
             </ul>
         </div>
-        <div class="col-md-8 selected-business-types-permits-column" *ngIf="selectedbusinessCategory">
-            <div class="bp-list-permits-header">PERMITS</div>
-            <div>
-                <h2 [@flyInOut]="selectedbusinessCategory">
-                    {{selectedbusinessCategory.name | uppercase}}
-                </h2>
-                <div class="business-type" *ngFor="let businessType of selectedbusinessCategory.businessTypes" [@flyInOut]="selectedbusinessCategory">
-                    <div class="business-type-values" (click)="businessType.collapsed = !businessType.collapsed">
-                        <span class="business-type-title" [ngClass]="{collapsed: businessType.collapsed}">{{businessType.business_type | uppercase}}</span>
+
+        <!-- Business Types and Permits list -->
+        <div class="col-md-8" *ngIf="selectedbusinessCategory">
+
+            <!-- If Selected BusinessType  -->
+            <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
+                <div>
+                    <div class="bp-list-permits-header">PERMIT</div>
+                    <h2 class="bp-business-type">{{selectedBusinessType.business_category | uppercase}}</h2>
+                    <div class="business-type-values">{{selectedBusinessType.business_type | uppercase}}</div>
+                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" *ngFor="let permit of selectedBusinessType.permits">
+                        <div href="*" class="bp-permit-name">{{permit.friendly_name}}</div>
+                        <a href="*" class="permit-url">{{permit.url}}</a >
                     </div>
-                    <div *ngIf="!businessType.collapsed" [@collapse]>
-                        <div class="permit" *ngFor="let permit of businessType.permits">
-                            <a href="index.html" class="permit-name">{{permit.friendly_name}}</a>
-                        </div>
+                </div>
+            </div>
+
+            <!-- If All BusinessTypes -->
+            <div #allBusinessTypesID class="bp-types-permits" *ngIf="toggleAllBusinessTypes">
+                <div class="bp-list-permits-header">PERMIT(S)</div>
+                <div>
+                    <h2 [@flyInOut]="selectedbusinessCategory">{{selectedbusinessCategory.name | uppercase}}</h2>
+                    <div class="bp-business-type" *ngFor="let businessType of selectedbusinessCategory.businessTypes" [@flyInOut]="selectedbusinessCategory">
+                        <div class="business-type-values">{{businessType.business_type | uppercase}}</div>
+                        <div class="bp-permit" *ngFor="let permit of businessType.permits">
+                            <div href="*" class="bp-permit-name">{{permit.friendly_name}}</div>
+                            <a href="*" class="permit-url">{{permit.url}}</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
