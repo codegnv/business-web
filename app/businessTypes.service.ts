@@ -8,7 +8,7 @@ import { Permit } from './permit';
 @Injectable()
 export class BusinessTypeService {
     private baseUrl: string = 'https://data.cityofgainesville.org/resource';
-    private typesPath: string = 'pp75-zh6w.json';
+    private typesPath: string = 'i9px-haju.json';
     private permitsPath: string = 'mfe4-6q3g.json';
 
 
