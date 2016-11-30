@@ -19,6 +19,9 @@ import {
                 style({transform: 'translateX(100%)'}),
                 animate(100)
             ]),
+            transition('* => void', [
+                animate(100, style({transform: 'translateX(100%)'})),
+            ]),
         ])
     ]
 
@@ -41,6 +44,10 @@ export class BusinessTypeListComponent implements OnInit {
             /* onComplete */ () => this.isLoading = false);
     }
     onSelect(BusinessCategory: BusinessCategory[]): void {
-        this.selectedbusinessCategory = BusinessCategory;
+        if (this.selectedbusinessCategory === BusinessCategory) {
+            this.selectedbusinessCategory = [];
+        } else {
+            this.selectedbusinessCategory = BusinessCategory;
+        }
     }
 }
