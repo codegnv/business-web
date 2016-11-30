@@ -42,7 +42,7 @@
     font-weight: 400;
     color: black;
 }
-.bp-category-row:after {
+.bp-category-row:after, .business-type-title:after {
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -51,6 +51,17 @@
     font-family: "FontAwesome";
     content: '\f105';
     color: #7b7b7b;
+}
+.business-type-title::after {
+    top: -3px;
+    right: -15px;
+    content: '\f107';
+}
+.business-type-title {
+    position: relative;
+}
+.business-type-title.collapsed::after {
+    content: '\f105';
 }
 
 .bp-category-row 
@@ -63,7 +74,7 @@
     /*margin-top: 15px;*/
     position: relative;
 }
-.business-type {} .business-type-values {
+.business-type-values {
     border-top: 1px solid gray;
     font-weight: 700;
     font-size: 1.1em;
