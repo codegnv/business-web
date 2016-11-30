@@ -161,11 +161,15 @@ nav a.router-link-active {
 }
 
 .business-category {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .business-type {
-    font-weight: 400;
+  font-weight: 400;
+}
+
+.list-group-item {
+  cursor: pointer
 }
 
 /*.permit {
