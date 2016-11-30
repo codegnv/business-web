@@ -50,13 +50,13 @@ https://businessportal.sfgov.org/permits-licenses
 
 ## Possible opendata service
 
-[Permits by business type](https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/pp75-zh6w)
+[Permits by business type](https://data.cityofgainesville.org/Economic-Development-Redevelopment/Permits-by-Business-Type/i9px-haju)
 
-[Test dataset](https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g)
+[Permit Details](https://data.cityofgainesville.org/dataset/Permit-Table-TEST-for-C4GNV-/mfe4-6q3g)
 
 ## JSON Source data for associations, maintained by the city
 
-[Business Types](https://data.cityofgainesville.org/resource/pp75-zh6w.json)
+[Business Types](https://data.cityofgainesville.org/resource/i9px-haju.json)
 
 [Business Permits](https://data.cityofgainesville.org/resource/mfe4-6q3g.json)
 
