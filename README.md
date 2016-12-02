@@ -25,10 +25,10 @@ You want to run this bad boy locally?  Let's do it.
 
 * Install npm from https://www.npmjs.com/
  * It is suggested that you use [yarn](https://yarnpkg.com/)
-  as an alternative to `npm` for package management. With
-  `npm`, you can install this using `npm install -g yarn`,
-  or follow yarn's own documentation to figure out how you
-  want to install it.  This documentation will refer to
+  as an alternative to `npm` for package management. 
+  If you don't already have it installed, you can
+  follow [yarn's own documentation](https://yarnpkg.com/en/docs/install)
+  to install it.  This documentation will refer to
   `yarn` in place of `npm`, but they can be used in the
   same way.
 
