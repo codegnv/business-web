@@ -10,7 +10,7 @@ before_install:
     - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
     - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 before_deploy:
-    aws s3 rm s3://business-dev.c4gnv.com/ --recursive --region us-east-1
+    aws s3 rm s3://bdev.c4gnv.com/ --recursive --region us-east-1
 install:
     - curl -o- -L https://yarnpkg.com/install.sh | bash
     - export PATH=$PATH:$HOME/.yarn/bin
@@ -21,7 +21,7 @@ deploy:
     provider: s3
     access_key_id: $AWS_ACCESS_KEY # Declared in travis build settings
     secret_access_key: $AWS_SECRET_KEY # Declared in travis build settings
-    bucket: business-dev.c4gnv.com
+    bucket: bdev.c4gnv.com
     cache_control: "max-age=604800"
     skip_cleanup: true
     region: "us-east-1"
