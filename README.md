@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/c4gnv/business-web.svg?branch=develop)](https://travis-ci.org/c4gnv/business-web)
 
 # Latest Dev Build
-[http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/](http://business-dev.c4gnv.com.s3-website-us-east-1.amazonaws.com/)
+[http://bdev.c4gnv.com.s3-website-us-east-1.amazonaws.com/](http://bdev.c4gnv.com.s3-website-us-east-1.amazonaws.com/)
 
 # Business Portal
 C4GNV is a member brigade of Code for America, the goal of this project is to make it easier
