@@ -92,6 +92,7 @@ friendly_name: string;
 permit_location: {
     url: string;
 };
+permit_description: string;
 permit_name: string;
 ```
 
