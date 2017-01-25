@@ -34,31 +34,20 @@
             <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
                 <div>
                     <div class="bp-list-permits-header">Required Permits</div>
-                    <h2 class="bp-business-type">{{selectedBusinessType.business_category | uppercase}}</h2>
-                    <div class="business-type-values">{{selectedBusinessType.business_type | uppercase}}</div>
                     <div [@flyInOut]="selectedBusinessType" class="bp-permit" *ngFor="let permit of selectedBusinessType.requiredPermits">
-                        <div href="*" class="bp-permit-name">{{permit.friendly_name}}</div>
+                        <a target="_blank" *ngIf="permit.permit_location" href="{{permit.permit_location.url}}" class="bp-permit-name">{{permit.friendly_name}}</a>
+                        <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bp-list-permits-header">Conditionally Required Permits</div>
+                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" *ngFor="let permit of selectedBusinessType.conditionalPermits">
+                        <a target="_blank" *ngIf="permit.permit_location" href="{{permit.permit_location.url}}" class="bp-permit-name">{{permit.friendly_name}}</a>
+                        <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
                     </div>
                 </div>
             </div>
 
-            <!-- If All BusinessTypes -->
-            <div #allBusinessTypesID class="bp-types-permits" *ngIf="toggleAllBusinessTypes">
-                <div class="bp-list-permits-header">Required Permits</div>
-                <div>
-                    <h2 [@flyInOut]="selectedbusinessCategory">{{selectedbusinessCategory.name | uppercase}}</h2>
-                    <div class="bp-business-type" *ngFor="let businessType of selectedbusinessCategory.businessTypes" [@flyInOut]="selectedbusinessCategory">
-                        <div class="business-type-values" (click)="businessType.collapsed = !businessType.collapsed">
-                            <span class="business-type-title" [ngClass]="{collapsed: businessType.collapsed}">{{businessType.business_type | uppercase}}</span>
-                        </div>
-                        <div *ngIf="!businessType.collapsed" [@collapse]>
-                            <div class="bp-permit" *ngFor="let permit of businessType.requiredPermits">
-                                <div href="*" class="bp-permit-name">{{permit.friendly_name}}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
