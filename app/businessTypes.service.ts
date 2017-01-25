@@ -60,7 +60,8 @@ function parsePermits(response: Response): Permit[] {
 function toPermit(r: any): Permit {
     let permit = <Permit>({
         friendly_name: r.friendly_name,
-        url: r.url,
+        permit_location: r.permit_location,
+        permit_description: r.permit_description,
         permit_name: r.permit_name,
     });
     return permit;
@@ -101,17 +102,22 @@ function combineCategoriesAndPermits(businessTypes: BusinessType[], permits: Per
 
             for (let businessTypeForThisCategory of businessTypesForThisCategory) {
                 let permitsForThisType: Permit[] = [];
+                let conditionalPermitsForThisType: Permit[] = [];
                 for (let permitName in permitNames) {
                     if (permitNames.hasOwnProperty(permitName)) {
                         if (businessTypeForThisCategory[permitName] === 'Required') {
                             permitsForThisType.push(permitNames[permitName]);
+                        } else if (businessTypeForThisCategory[permitName] === 'Conditionally Required') {
+                            conditionalPermitsForThisType.push(permitNames[permitName]);
                         }
+
                     }
                 }
                 let finalBusinessType = <BusinessType>({
                     business_type: businessTypeForThisCategory.business_type,
                     business_category: businessTypeForThisCategory.business_category,
-                    permits: permitsForThisType
+                    requiredPermits: permitsForThisType,
+                    conditionalPermits: conditionalPermitsForThisType
                 });
                 businessTypesWithPermits.push(finalBusinessType);
             }
