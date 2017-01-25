@@ -80,7 +80,8 @@ The schema for a BusinessType is as follows:
 ```
 business_type: string;
 business_category: string;
-permits: Permit[];
+requiredPermits: Permit[];
+conditionalPermits: Permit[];
 ```
 
 #### Permit
@@ -88,7 +89,7 @@ This is a permit that is required for a particular BusinessType.
 The schema for a Permit is as follows:
 ```
 friendly_name: string;
-url: {
+permit_location: {
     url: string;
 };
 permit_name: string;
