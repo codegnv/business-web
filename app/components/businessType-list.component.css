@@ -111,6 +111,9 @@
 .bp-permit-name {
     color: gray;
 }
+a.bp-permit-name {
+  text-decoration: underline;
+}
 .bp-list-types {
     z-index: 2;
     list-style-type: circle;
