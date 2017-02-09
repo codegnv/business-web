@@ -1,0 +1,15 @@
+<div class="bp-permit-component">
+    <div class="bp-permit-info-holder">
+        <a target="_blank" *ngIf="permit.permit_location" href="{{permit.permit_location.url}}" class="bp-permit-name">{{permit.friendly_name}}</a>
+        <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
+        <div class="bp-permit-desc">{{permit.permit_description}}</div>
+    </div>
+    <div class="bp-permit-icons-holder" *ngIf="permit.permit_location">
+        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon view">
+            <icon-view></icon-view>
+        </a>
+        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon download" download>
+            <icon-download></icon-download>
+        </a>
+    </div>
+</div>

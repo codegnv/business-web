@@ -34,16 +34,16 @@
             <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
                 <div>
                     <div class="bp-list-permits-header">Required Permits</div>
-                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" *ngFor="let permit of selectedBusinessType.requiredPermits">
-                        <a target="_blank" *ngIf="permit.permit_location" href="{{permit.permit_location.url}}" class="bp-permit-name">{{permit.friendly_name}}</a>
-                        <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
+                    <!-- All Required Permits -->
+                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.requiredPermits; let last = last">
+                        <bp-permit [permit]="permit"></bp-permit>
                     </div>
                 </div>
                 <div>
                     <div class="bp-list-permits-header">Conditionally Required Permits</div>
-                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" *ngFor="let permit of selectedBusinessType.conditionalPermits">
-                        <a target="_blank" *ngIf="permit.permit_location" href="{{permit.permit_location.url}}" class="bp-permit-name">{{permit.friendly_name}}</a>
-                        <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
+                    <!-- All Conditional Permits -->
+                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.conditionalPermits; let last = last">
+                        <bp-permit [permit]="permit"></bp-permit>
                     </div>
                 </div>
             </div>
