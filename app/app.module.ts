@@ -8,10 +8,13 @@ import { routing } from './app.routes';
 import { AppComponent }  from './app.component';
 import { BusinessTypeListComponent } from './components/businessType-list.component';
 import { HeaderComponent } from './components/header.component';
+import { IconViewComponent } from './components/icon-components/iconView.component';
+import { IconDownloadComponent } from './components/icon-components/iconDownload.component';
+import { BpPermitComponent } from './components/bp-permit/bpPermit.component';
 
 @NgModule({
     imports: [ BrowserModule, routing, FormsModule, HttpModule ],
-    declarations: [ AppComponent, BusinessTypeListComponent, HeaderComponent ],
+    declarations: [ AppComponent, BusinessTypeListComponent, HeaderComponent, IconViewComponent, IconDownloadComponent, BpPermitComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

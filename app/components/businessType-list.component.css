@@ -107,9 +107,25 @@
     font-size: 1.1em;
     color: #2d6ae2;
 }
-.bp-permit {}
-.bp-permit-name {
-    color: gray;
+.bp-permit {
+    border-bottom: 2px solid #A8ACB8;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+.bp-permit.last {
+    border: none;
+}
+.bp-permit-info-holder {
+    width: calc(100% - 75px); /* 75px is width of two icons (35 + 35) plus margin between them (5) */
+}
+.bp-permit-icons-holder {
+    width: 75px;
+    display: flex;
+}
+.bp-permit-name, a.bp-permit-name:link, a.bp-permit-name:visited {
+    color: #326DDF;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 a.bp-permit-name {
   text-decoration: underline;
@@ -154,4 +170,30 @@ a.bp-permit-name {
 .business-type-title.collapsed::after {
     cursor: pointer;
     content: '\f105';
+}
+.bp-permit-icon {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    padding: 5px;
+    background-color: #DCDCDC;
+    border-radius: 50%;
+    display: inline-block;
+}
+.bp-permit-icon.view {
+    margin-right: 5px;
+}
+.bp-permit-icon.download {
+    padding: 7px;
+}
+.bp-permit-icon:hover {
+    text-decoration: none;
+}
+.bp-permit-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #326DDF;
+}
+.bp-permit-component {
+    display: flex;
 }
