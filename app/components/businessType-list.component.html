@@ -32,6 +32,7 @@
 
             <!-- If Selected BusinessType  -->
             <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
+                <div class="business-type-values">{{selectedBusinessType.business_type | uppercase}}</div>
                 <div>
                     <div class="bp-list-permits-header">Required Permits</div>
                     <!-- All Required Permits -->
