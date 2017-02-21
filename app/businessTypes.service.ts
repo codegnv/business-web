@@ -58,10 +58,12 @@ function parsePermits(response: Response): Permit[] {
 }
 
 function toPermit(r: any): Permit {
+    console.log(r);
     let permit = <Permit>({
         friendly_name: r.friendly_name,
         permit_location: r.permit_location,
         permit_description: r.permit_description,
+        online_submission: r.online_submission,
         permit_name: r.permit_name,
     });
     return permit;
