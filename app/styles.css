@@ -1,6 +1,7 @@
 /* Master Styles */
 @import './components/header.component.css';
 @import './components/businessType-list.component.css';
+@import './footer.css';
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 /*@import '../node_modules/font-awesome/css/font-awesome.css';*/
 
