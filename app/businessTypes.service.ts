@@ -58,7 +58,6 @@ function parsePermits(response: Response): Permit[] {
 }
 
 function toPermit(r: any): Permit {
-    console.log(r);
     let permit = <Permit>({
         friendly_name: r.friendly_name,
         permit_location: r.permit_location,
