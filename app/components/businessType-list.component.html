@@ -8,8 +8,8 @@
                 </div>
 
                 <!-- Each Business Category -->
-                <div *ngIf="finalBusinessCategories && togglebusinessCategories">
-                    <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories"
+                <div *ngIf="displayedCategories && togglebusinessCategories">
+                    <li class="list-group-item bp-category-row" *ngFor="let businessCategory of displayedCategories"
                     (click)="onSelectBusinessCategory(businessCategory); $event.stopPropagation();"
                     [class.selected]="selectedBusinessCategories.has(businessCategory)">
                         <i class="bp-category-icon fa fa-chevron-right" [ngClass]="{'fa-chevron-down':selectedBusinessCategories.has(businessCategory)}" aria-hidden="false"></i>
