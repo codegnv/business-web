@@ -11,14 +11,14 @@
                 <div *ngIf="finalBusinessCategories && togglebusinessCategories">
                     <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories"
                     (click)="onSelectBusinessCategory(businessCategory); $event.stopPropagation();"
-                    [class.selected]="selectedBusinessCategories.includes(businessCategory)">
-                        <i class="bp-category-icon fa fa-chevron-right" [ngClass]="{'fa-chevron-down':selectedBusinessCategories.includes(businessCategory)}" aria-hidden="false"></i>
+                    [class.selected]="selectedBusinessCategories.has(businessCategory)">
+                        <i class="bp-category-icon fa fa-chevron-right" [ngClass]="{'fa-chevron-down':selectedBusinessCategories.has(businessCategory)}" aria-hidden="false"></i>
                         <label class="bp-category-name no-select">{{businessCategory.name}}</label>
 
                         <!-- Each Selected Business Category Type-->
-                        <div id="SelectedBusinessCategoryTypeColumn" *ngIf="selectedBusinessCategories.includes(businessCategory)" >
+                        <div id="SelectedBusinessCategoryTypeColumn" *ngIf="selectedBusinessCategories.has(businessCategory)" >
                             <ul class="bp-list-types">
-                                <li class="bp-list-types-text no-select" *ngFor="let businessCategoryType of businessCategory.businessTypes" (click)="onSelectBusinessCategoryType(businessCategoryType); $event.stopPropagation()" [class.selected]="businessCategoryType === selectedBusinessType"> {{businessCategoryType.business_type}}
+                                <li class="bp-list-types-text no-select" *ngFor="let businessCategoryType of businessCategory.businessTypes" (click)="onSelectBusinessCategoryType(businessCategoryType); $event.stopPropagation()" [class.selected]="selectedBusinessTypes.has(businessCategoryType)"> {{businessCategoryType.business_type}}
                                 </li>
                             </ul>
                         </div>
@@ -28,22 +28,22 @@
         </div>
 
         <!-- Business Types and Permits list -->
-        <div class="col-md-8" *ngIf="selectedBusinessCategories.length">
+        <div class="col-md-8" *ngIf="selectedBusinessCategories">
 
             <!-- If Selected BusinessType  -->
-            <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
-                <div class="business-type-values">{{selectedBusinessType.business_type | uppercase}}</div>
-                <div>
+            <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessTypes && !toggleAllBusinessTypes">
+                <div class="business-type-values">{{selectedBusinessTypes.business_type | uppercase}}</div>
+                <div *ngIf="requiredPermitsToShow.length">
                     <div class="bp-list-permits-header">Required Permits</div>
                     <!-- All Required Permits -->
-                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.requiredPermits; let last = last">
+                    <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredPermitsToShow; let last = last">
                         <bp-permit [permit]="permit"></bp-permit>
                     </div>
                 </div>
-                <div>
+                <div *ngIf="conditionalPermitsToShow.length">
                     <div class="bp-list-permits-header">Conditionally Required Permits</div>
                     <!-- All Conditional Permits -->
-                    <div [@flyInOut]="selectedBusinessType" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.conditionalPermits; let last = last">
+                    <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of conditionalPermitsToShow; let last = last">
                         <bp-permit [permit]="permit"></bp-permit>
                     </div>
                 </div>
