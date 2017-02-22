@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { BusinessType } from './businessType';
-import { BusinessCategory } from './businessCategory';
 import { Permit } from './permit';
 
 @Injectable()
@@ -36,7 +35,7 @@ export class BusinessTypeService {
             this.getPermits(),
             this.getBusinessTypes(),
             function(permits, businessTypes) {
-                return combineCategoriesAndPermits(businessTypes, permits);
+                return combineTypesAndPermits(businessTypes, permits);
             }
         );
     }
@@ -68,7 +67,7 @@ function toPermit(r: any): Permit {
     return permit;
 }
 
-function combineCategoriesAndPermits(businessTypes: BusinessType[], permits: Permit[]): BusinessCategory[] {
+function combineTypesAndPermits(businessTypes: BusinessType[], permits: Permit[]): BusinessType[] {
     // Initialize permit lookup object
     let permitNames: any = {};
     // Populate permit lookup object
@@ -79,60 +78,31 @@ function combineCategoriesAndPermits(businessTypes: BusinessType[], permits: Per
         permitNames[permit.permit_name] = permit;
     }
 
-    let businessCategories: any = {};
-    // Deduplicate Business Categories
+    // Initialize array of BusinessTypes to be populated and returned by this function
+    let returnBusinessTypes: BusinessType[] = [];
+
     for (let businessType of businessTypes) {
-        businessCategories[businessType.business_category] = true;
-    }
-
-    // Initialize array of BusinessCategories to be populated and returned by this function
-    let returnBusinessCategories: BusinessCategory[] = [];
-
-    // Loop through deduplicated businessCategories
-    for (let businessCategory in businessCategories) {
-        if (businessCategories.hasOwnProperty(businessCategory)) {
-            // Initialize empty array of type BusinessType to be used in our BusinessCategory
-            let businessTypesForThisCategory: BusinessType[] = [];
-            let businessTypesWithPermits: BusinessType[] = [];
-            for (let businessType of businessTypes) {
-                // Find business types that have the same category as the category we are currently on in the parent loop
-                if (businessType.business_category === businessCategory) {
-                    businessTypesForThisCategory.push(businessType);
+        let permitsForThisType: Permit[] = [];
+        let conditionalPermitsForThisType: Permit[] = [];
+        for (let permitName in permitNames) {
+            if (permitNames.hasOwnProperty(permitName)) {
+                if (businessType[permitName] === 'Required') {
+                    permitsForThisType.push(permitNames[permitName]);
+                } else if (businessType[permitName] === 'Conditionally Required') {
+                    conditionalPermitsForThisType.push(permitNames[permitName]);
                 }
+
             }
-
-            for (let businessTypeForThisCategory of businessTypesForThisCategory) {
-                let permitsForThisType: Permit[] = [];
-                let conditionalPermitsForThisType: Permit[] = [];
-                for (let permitName in permitNames) {
-                    if (permitNames.hasOwnProperty(permitName)) {
-                        if (businessTypeForThisCategory[permitName] === 'Required') {
-                            permitsForThisType.push(permitNames[permitName]);
-                        } else if (businessTypeForThisCategory[permitName] === 'Conditionally Required') {
-                            conditionalPermitsForThisType.push(permitNames[permitName]);
-                        }
-
-                    }
-                }
-                let finalBusinessType = <BusinessType>({
-                    business_type: businessTypeForThisCategory.business_type,
-                    business_category: businessTypeForThisCategory.business_category,
-                    requiredPermits: permitsForThisType,
-                    conditionalPermits: conditionalPermitsForThisType
-                });
-                businessTypesWithPermits.push(finalBusinessType);
-            }
-
-            let finalBusinessCategory = <BusinessCategory>({
-                // name: string
-                name: businessCategory,
-                // businessTypes: BusinessType[]
-                businessTypes: businessTypesWithPermits
-            });
-            returnBusinessCategories.push(finalBusinessCategory);
         }
+        let finalBusinessType = <BusinessType>({
+            business_type: businessType.business_type,
+            business_category: businessType.business_category,
+            requiredPermits: permitsForThisType,
+            conditionalPermits: conditionalPermitsForThisType
+        });
+        returnBusinessTypes.push(finalBusinessType);
     }
-    return returnBusinessCategories;
+    return returnBusinessTypes;
 }
 
 // this could also be a private method of the component class

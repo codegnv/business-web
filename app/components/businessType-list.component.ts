@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinessTypeService } from '../businessTypes.service';
-import { BusinessCategory } from '../businessCategory';
+import { BusinessSearchService } from '../businessSearch.service';
 import { BusinessType } from '../businessType';
 import { Permit } from '../permit';
 import {
@@ -9,7 +9,6 @@ import {
     transition,
     animate
 } from '@angular/core';
-import { BusinessSearchService } from '../businessSearch.service';
 
 @Component({
     selector: 'businesstype-list',
@@ -39,21 +38,19 @@ import { BusinessSearchService } from '../businessSearch.service';
 
 })
 export class BusinessTypeListComponent implements OnInit {
-    displayedCategories: any = [];
-    finalBusinessCategories: any = [];
+    displayedTypes: any = [];
+    businessTypes: any = [];
+    displayedPermits: any = [];
     errorMessage: string = '';
     isLoading: boolean = true;
 
-    businessCategoryTypesListState: string = 'closed';
-
-    selectedBusinessCategories: Set<BusinessCategory> = new Set<BusinessCategory>();
     selectedBusinessTypes: Set<BusinessType> = new Set<BusinessType>();
     requiredPermitsToShowSet: Set<Permit> = new Set<Permit>();
     requiredPermitsToShow: Permit[] = [];
     conditionalPermitsToShowSet: Set<Permit> = new Set<Permit>();
     conditionalPermitsToShow: Permit[] = [];
     toggleAllBusinessTypes: boolean = true;
-    togglebusinessCategories: boolean =  true;
+    togglebusinessTypes: boolean =  true;
     toggleSelectedBusinesstype: boolean = false;
 
     showSelectedBusinesstype: boolean = false;
@@ -63,34 +60,23 @@ export class BusinessTypeListComponent implements OnInit {
     ngOnInit() {
         this.businessSearchService.getData().subscribe(val => {
             if (val) {
-                let searchBusinessCategories = [];
-                for (let businessCategory of this.finalBusinessCategories) {
-                    if (businessCategory.name.toLowerCase().indexOf(val) !== -1) {
-                        searchBusinessCategories.push(businessCategory);
+                let searchBusinessTypes = [];
+
+                for (let businessType of this.businessTypes) {
+                    if (businessType.business_type.toLowerCase().indexOf(val) !== -1) {
+                        searchBusinessTypes.push(businessType);
                     } else {
-                        let newCategory = <BusinessCategory>({});
-                        newCategory.name = businessCategory.name;
-                        newCategory.businessTypes = [];
-
-                        for (let businessType of businessCategory.businessTypes) {
-                            if (businessType.business_type.toLowerCase().indexOf(val) !== -1) {
-                                newCategory.businessTypes.push(businessType);
-                            } else {
-                                // if we want the search to go deeper
-                                // like checking each individual permit's name
-                            }
-                        }
-
-                        if (newCategory.businessTypes.length) {
-                            searchBusinessCategories.push(newCategory);
-                        }
+                        // if we want the search to go deeper
+                        // like checking each individual permit's name
                     }
                 }
-                this.displayedCategories = searchBusinessCategories;
+
+                if (searchBusinessTypes.length) {
+                    this.displayedTypes = searchBusinessTypes;
+                }
             } else {
-                this.displayedCategories = this.finalBusinessCategories;
+                this.displayedTypes = this.businessTypes;
             }
-            this.selectedBusinessCategories = new Set<BusinessCategory>();
             this.selectedBusinessTypes = new Set<BusinessType>();
             this.requiredPermitsToShowSet = new Set<Permit>();
             this.requiredPermitsToShow = [];
@@ -102,8 +88,8 @@ export class BusinessTypeListComponent implements OnInit {
         .subscribe(
             b => {
                 /* happy path */
-                this.finalBusinessCategories = b;
-                this.displayedCategories = this.finalBusinessCategories;
+                this.businessTypes = b;
+                this.displayedTypes = this.businessTypes;
             },
             e => {
                 /* error path */
@@ -114,22 +100,15 @@ export class BusinessTypeListComponent implements OnInit {
                 this.isLoading = false;
             });
     }
-    onClickTogglebusinessCategories(): void {
-        this.togglebusinessCategories = !this.togglebusinessCategories;
+    onClickTogglebusinessTypes(): void {
+        this.togglebusinessTypes = !this.togglebusinessTypes;
     }
-    onSelectBusinessCategory(BusinessCategory: BusinessCategory): void {
-        if (this.selectedBusinessCategories.has(BusinessCategory)) {
-            this.selectedBusinessCategories.delete(BusinessCategory);
-        } else {
-            this.selectedBusinessCategories.add(BusinessCategory);
-        }
-    }
-    onSelectBusinessCategoryType(BusinessCategoryType: BusinessType): void {
+    onSelectBusinessType(selectedBusinessType: BusinessType): void {
         this.toggleAllBusinessTypes = false;
-        if (this.selectedBusinessTypes.has(BusinessCategoryType)) {
-            this.selectedBusinessTypes.delete(BusinessCategoryType);
+        if (this.selectedBusinessTypes.has(selectedBusinessType)) {
+            this.selectedBusinessTypes.delete(selectedBusinessType);
         } else {
-            this.selectedBusinessTypes.add(BusinessCategoryType);
+            this.selectedBusinessTypes.add(selectedBusinessType);
         }
 
         this.requiredPermitsToShowSet.clear();
