@@ -4,7 +4,7 @@
             <div class="bp-list-type-header">REFINE YOUR RESULTS</div>
             <div class="bp-list-type-title bp-list-type-subheader no-select" (click)="onClickTogglebusinessTypes(); $event.stopPropagation();" [class.selected]="togglebusinessTypes">Business Types <i class="bp-type-title-icon fa" [ngClass]="{'fa-plus-circle': !togglebusinessTypes, 'fa-minus-circle': togglebusinessTypes}"></i>
             </div>
-            <!-- Each Business Category -->
+            <!-- All the business types -->
             <div *ngIf="displayedTypes && togglebusinessTypes">
 
                 <!-- Each Selected Business Type-->
