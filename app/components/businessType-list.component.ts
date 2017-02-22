@@ -88,11 +88,15 @@ export class BusinessTypeListComponent implements OnInit {
                     }
                 }
                 this.displayedCategories = searchBusinessCategories;
-                this.selectedbusinessCategory = null;
-                this.selectedBusinessType = null;
             } else {
                 this.displayedCategories = this.finalBusinessCategories;
             }
+            this.selectedBusinessCategories = new Set<BusinessCategory>();
+            this.selectedBusinessTypes = new Set<BusinessType>();
+            this.requiredPermitsToShowSet = new Set<Permit>();
+            this.requiredPermitsToShow = [];
+            this.conditionalPermitsToShowSet = new Set<Permit>();
+            this.conditionalPermitsToShow = [];
         });
         this.businessTypesService
         .getAll()
