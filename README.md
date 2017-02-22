@@ -66,14 +66,6 @@ https://businessportal.sfgov.org/permits-licenses
 
 ### Data Structures
 
-#### BusinessCategory
-This is used to group various types of businesses together for filtering.
-The schema of a BusinessCategory is as follows:
-```
-name: string;
-businessTypes: BusinessType[];
-```
-
 #### BusinessType
 This is the type of business that a person is trying to open. These are defined by the city of gainesville.
 The schema for a BusinessType is as follows:
@@ -99,5 +91,5 @@ permit_description: string;
 permit_name: string;
 ```
 
-The permit locator page makes two http requests to Socrata (see above URLs) and generates an array of BusinessCategory structures.
+The permit locator page makes two http requests to Socrata (see above URLs) and generates an array of BusinessType structures.
 This structure is populated with types and permits from Socrata.
