@@ -18,15 +18,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <p class="bp-header-text" > Find permits, licenses, and forms that apply to your business by using the search field and filtering by type.</p>
+                <p class="bp-header-text">Find permits, licenses, and forms that apply to your business by using the search field and filtering by type.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="input-group bp-search">
-                    <input type="text" class="form-control bp-search-input" placeholder="">
+                    <input type="text" class="form-control bp-search-input" [(ngModel)]="searchString" (keyup)="searchKeyUp($event)">
                     <span class="input-group-btn">
-                        <button class="btn btn-secondary bp-search-input" type="button">Search</button>
+                        <button class="btn btn-secondary bp-search-input" type="button" (click)="searchBtnClicked()">Search</button>
                     </span>
                 </div>
             </div>

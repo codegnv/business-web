@@ -9,6 +9,7 @@ import {
     transition,
     animate
 } from '@angular/core';
+import { BusinessSearchService } from '../businessSearch.service';
 
 @Component({
     selector: 'businesstype-list',
@@ -39,6 +40,7 @@ import {
 
 })
 export class BusinessTypeListComponent implements OnInit {
+    displayedCategories: any = [];
     finalBusinessCategories: any = [];
     errorMessage: string = '';
     isLoading: boolean = true;
@@ -57,15 +59,61 @@ export class BusinessTypeListComponent implements OnInit {
 
     showSelectedBusinesstype: boolean = false;
 
-    constructor(private businessTypesService: BusinessTypeService) {}
+    constructor(private businessTypesService: BusinessTypeService, private businessSearchService: BusinessSearchService) {}
 
     ngOnInit() {
+        this.businessSearchService.getData().subscribe(val => {
+            if (val) {
+                let searchBusinessCategories = [];
+                for (let businessCategory of this.finalBusinessCategories) {
+                    if (businessCategory.name.toLowerCase().indexOf(val) !== -1) {
+                        searchBusinessCategories.push(businessCategory);
+                    } else {
+                        let newCategory = <BusinessCategory>({});
+                        newCategory.name = businessCategory.name;
+                        newCategory.businessTypes = [];
+
+                        for (let businessType of businessCategory.businessTypes) {
+                            if (businessType.business_type.toLowerCase().indexOf(val) !== -1) {
+                                newCategory.businessTypes.push(businessType);
+                            } else {
+                                // if we want the search to go deeper
+                                // like checking each individual permit's name
+                            }
+                        }
+
+                        if (newCategory.businessTypes.length) {
+                            searchBusinessCategories.push(newCategory);
+                        }
+                    }
+                }
+                this.displayedCategories = searchBusinessCategories;
+            } else {
+                this.displayedCategories = this.finalBusinessCategories;
+            }
+            this.selectedBusinessCategories = new Set<BusinessCategory>();
+            this.selectedBusinessTypes = new Set<BusinessType>();
+            this.requiredPermitsToShowSet = new Set<Permit>();
+            this.requiredPermitsToShow = [];
+            this.conditionalPermitsToShowSet = new Set<Permit>();
+            this.conditionalPermitsToShow = [];
+        });
         this.businessTypesService
         .getAll()
         .subscribe(
-            /* happy path */ b => this.finalBusinessCategories = b,
-                /* error path */ e => this.errorMessage = e,
-                /* onComplete */ () => this.isLoading = false);
+            b => {
+                /* happy path */
+                this.finalBusinessCategories = b;
+                this.displayedCategories = this.finalBusinessCategories;
+            },
+            e => {
+                /* error path */
+                this.errorMessage = e;
+            },
+            () => {
+                /* onComplete */
+                this.isLoading = false;
+            });
     }
     onClickTogglebusinessCategories(): void {
         this.togglebusinessCategories = !this.togglebusinessCategories;
