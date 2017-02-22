@@ -44,7 +44,7 @@ export class BusinessTypeListComponent implements OnInit {
 
     businessCategoryTypesListState: string = 'closed';
 
-    selectedbusinessCategory: BusinessCategory[] = [];
+    selectedBusinessCategories: BusinessCategory[] = [];
     selectedBusinessType: BusinessType[] = [];
     toggleAllBusinessTypes: boolean = true;
     togglebusinessCategories: boolean =  true;
@@ -65,19 +65,13 @@ export class BusinessTypeListComponent implements OnInit {
     onClickTogglebusinessCategories(): void {
         this.togglebusinessCategories = !this.togglebusinessCategories;
     }
-    onSelectBusinessCategory(BusinessCategory: BusinessCategory[]): void {
-        if ( BusinessCategory !== this.selectedbusinessCategory) {
-            this.showSelectedBusinesstype = true;
-            this.toggleAllBusinessTypes = true;
-            this.toggleSelectedBusinesstype =  false;
-            this.selectedbusinessCategory = BusinessCategory;
-            this.businessCategoryTypesListState = (this.businessCategoryTypesListState === 'closed' ? 'open' : 'closed');
+    onSelectBusinessCategory(BusinessCategory: BusinessCategory): void {
+        if (this.selectedBusinessCategories.includes(BusinessCategory)) {
+            this.selectedBusinessCategories = this.selectedBusinessCategories.filter((businessCategory: BusinessCategory) => {
+                return businessCategory !== BusinessCategory;
+            });
         } else {
-            this.selectedbusinessCategory = BusinessCategory;
-            this.toggleAllBusinessTypes = true;
-            this.toggleSelectedBusinesstype =  false;
-            this.showSelectedBusinesstype =  !this.showSelectedBusinesstype;
-            this.businessCategoryTypesListState = (this.businessCategoryTypesListState === 'closed' ? 'open' : 'closed');
+            this.selectedBusinessCategories.push(BusinessCategory);
         }
     }
     onSelectBusinessCategoryType(BusinessCategoryType: BusinessType[]): void {

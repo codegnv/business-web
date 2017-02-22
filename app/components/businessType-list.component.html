@@ -11,14 +11,14 @@
                 <div *ngIf="finalBusinessCategories && togglebusinessCategories">
                     <li class="list-group-item bp-category-row" *ngFor="let businessCategory of finalBusinessCategories"
                     (click)="onSelectBusinessCategory(businessCategory); $event.stopPropagation();"
-                    [class.selected]="businessCategory === selectedbusinessCategory">
-                        <i class="bp-category-icon fa" [ngClass]="{'fa-chevron-right':toggleAllBusinessTypes || !toggleAllBusinessTypes,'fa-chevron-down':(selectedbusinessCategory === businessCategory) && showSelectedBusinesstype}" aria-hidden="false"></i>
+                    [class.selected]="selectedBusinessCategories.includes(businessCategory)">
+                        <i class="bp-category-icon fa fa-chevron-right" [ngClass]="{'fa-chevron-down':selectedBusinessCategories.includes(businessCategory)}" aria-hidden="false"></i>
                         <label class="bp-category-name no-select">{{businessCategory.name}}</label>
 
                         <!-- Each Selected Business Category Type-->
-                        <div id="SelectedBusinessCategoryTypeColumn" *ngIf="(selectedbusinessCategory === businessCategory) && showSelectedBusinesstype" >
-                            <ul class="bp-list-types" *ngIf="showSelectedBusinesstype" >
-                                <li class="bp-list-types-text no-select" *ngFor="let businessCategoryType of selectedbusinessCategory.businessTypes" (click)="onSelectBusinessCategoryType(businessCategoryType); $event.stopPropagation()" [class.selected]="businessCategoryType === selectedBusinessType"> {{businessCategoryType.business_type}}
+                        <div id="SelectedBusinessCategoryTypeColumn" *ngIf="selectedBusinessCategories.includes(businessCategory)" >
+                            <ul class="bp-list-types">
+                                <li class="bp-list-types-text no-select" *ngFor="let businessCategoryType of businessCategory.businessTypes" (click)="onSelectBusinessCategoryType(businessCategoryType); $event.stopPropagation()" [class.selected]="businessCategoryType === selectedBusinessType"> {{businessCategoryType.business_type}}
                                 </li>
                             </ul>
                         </div>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Business Types and Permits list -->
-        <div class="col-md-8" *ngIf="selectedbusinessCategory">
+        <div class="col-md-8" *ngIf="selectedBusinessCategories.length">
 
             <!-- If Selected BusinessType  -->
             <div #selectedBusinessTypesID class="bp-types-permits" *ngIf="selectedBusinessType && !toggleAllBusinessTypes">
