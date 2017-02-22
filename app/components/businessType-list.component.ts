@@ -22,8 +22,7 @@ import { BusinessSearchService } from '../businessSearch.service';
                 animate(100)
             ]),
             transition('* => void', [
-                style({transform: 'translateX(100%)'}),
-                animate(100)
+                animate(100, style({transform: 'translateX(100%)'}))
             ]),
         ]),
         trigger('collapse', [
