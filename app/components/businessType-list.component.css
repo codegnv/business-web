@@ -19,7 +19,7 @@
     margin-right: auto;
     margin-left: auto;
 }
-.bp-list-category-header {
+.bp-list-type-header {
     border-bottom: 2px solid black;
     font-weight: 700;
     font-size: 1.1rem;
@@ -27,7 +27,7 @@
     padding-right: 15px;
     width: 95%;
 }
-.bp-list-category-subheader {
+.bp-list-type-subheader {
     padding-top: 12px;
     font-size: 1.2em;
     font-weight: 700;
@@ -40,26 +40,13 @@
     padding-right: 15px;
     margin-bottom: 10px;
 }
-.bp-list-category-title{
+.bp-list-type-title{
     color: #2d6ae2 !important;
-
-}
-.bp-category-title-icon{
-    content: "\f04e";
-    font-family: "FontAwesome";
-
 }
 
-.bp-category-row.selected{
-    color: #2d6ae2 !important;
-    color: white;
-}
 .bp-list-types-text.selected {
     font-weight: bold;
     list-style-type:disc;
-    color: #2d6ae2 !important;
-}
-.bp-category-row:hover{
     color: #2d6ae2 !important;
 }
 .bp-list-types-text:hover {
@@ -68,29 +55,6 @@
 }
 .h2 {
     text-align: center;
-}
-.selected-business-category-column{
-    overflow-y: auto;
-    max-height: 1000px;
-}
-.selected-business-category-column .ul {
-    list-style-type: none;
-    margin-right: -20px;
-}
-.bp-category-row {
-    z-index: 1;
-    border:none;
-    font-size: 1.2rem;
-    padding: 4px 4px 4px 4px;
-    width: auto;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    color: #3a3939;
-}
-.bp-category-name{
-    display: inline;
-    font-weight:500;
-    font-family: 'Source Sans Pro Semibold', sans-serif;
 }
 .bp-types-permits{
     overflow-y: auto;
@@ -137,15 +101,6 @@ a.bp-permit-name {
 }
 .bp-list-types-text {
     margin-left: -6px;
-}
-.bp-category-title-icon{
-    color: #2d6ae2;
-    padding-left: 10%;
-    font-size: 1.3rem;
-}
-.bp-category-icon.fa-chevron-right:before {
-    font-size: .9rem;
-    color: #3a3939;
 }
 .permit-url{
     text-decoration:underline;
