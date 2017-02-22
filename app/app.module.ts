@@ -10,11 +10,13 @@ import { BusinessTypeListComponent } from './components/businessType-list.compon
 import { HeaderComponent } from './components/header.component';
 import { IconViewComponent } from './components/icon-components/iconView.component';
 import { IconDownloadComponent } from './components/icon-components/iconDownload.component';
+import { IconExternalComponent } from './components/icon-components/iconExternal.component';
 import { BpPermitComponent } from './components/bp-permit/bpPermit.component';
 
 @NgModule({
     imports: [ BrowserModule, routing, FormsModule, HttpModule ],
-    declarations: [ AppComponent, BusinessTypeListComponent, HeaderComponent, IconViewComponent, IconDownloadComponent, BpPermitComponent ],
+    declarations: [ AppComponent, BusinessTypeListComponent, HeaderComponent, IconViewComponent, IconDownloadComponent,
+        IconExternalComponent, BpPermitComponent ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

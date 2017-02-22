@@ -4,12 +4,15 @@
         <div *ngIf="!permit.permit_location" class="bp-permit-name">{{permit.friendly_name}}</div>
         <div class="bp-permit-desc">{{permit.permit_description}}</div>
     </div>
-    <div class="bp-permit-icons-holder" *ngIf="permit.permit_location">
-        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon view">
+    <div class="bp-permit-icons-holder">
+        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon view" *ngIf="permit.permit_location">
             <icon-view></icon-view>
         </a>
-        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon download" download>
+        <a target="_blank" href="{{permit.permit_location.url}}" class="bp-permit-icon download" *ngIf="permit.permit_location" download>
             <icon-download></icon-download>
+        </a>
+        <a target="_blank" href="{{permit.online_submission.url}}" class="bp-permit-icon download" *ngIf="permit.online_submission">
+            <icon-external></icon-external>
         </a>
     </div>
 </div>

@@ -92,6 +92,9 @@ friendly_name: string;
 permit_location: {
     url: string;
 };
+online_submission: {
+    url: string;
+};
 permit_description: string;
 permit_name: string;
 ```
