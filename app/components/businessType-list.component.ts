@@ -58,7 +58,7 @@ export class BusinessTypeListComponent implements OnInit {
     constructor(private businessTypesService: BusinessTypeService, private businessSearchService: BusinessSearchService) {}
 
     ngOnInit() {
-        this.businessSearchService.getData().subscribe(val => {
+        this.businessSearchService.getData().subscribe((val: string) => {
             if (val) {
                 let searchBusinessTypes = [];
 
