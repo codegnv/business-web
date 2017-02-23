@@ -63,7 +63,7 @@ export class BusinessTypeListComponent implements OnInit {
                 let searchBusinessTypes = [];
 
                 for (let businessType of this.businessTypes) {
-                    if (businessType.business_type.toLowerCase().indexOf(val) !== -1) {
+                    if (businessType.business_type.toLowerCase().indexOf(val.toLowerCase()) !== -1) {
                         searchBusinessTypes.push(businessType);
                     } else {
                         // if we want the search to go deeper
