@@ -66,8 +66,29 @@ export class BusinessTypeListComponent implements OnInit {
                     if (businessType.business_type.toLowerCase().indexOf(val) !== -1) {
                         searchBusinessTypes.push(businessType);
                     } else {
-                        // if we want the search to go deeper
-                        // like checking each individual permit's name
+                        let newBusinessType = <BusinessType>({});
+                        newBusinessType.business_category = businessType.business_category;
+                        newBusinessType.business_type = businessType.business_type;
+                        newBusinessType.requiredPermits = [];
+                        newBusinessType.conditionalPermits = [];
+
+                        // check required permits and add matching ones to result
+                        for (let businessRequiredPermit of businessType.requiredPermits) {
+                            if (businessRequiredPermit.friendly_name.toLowerCase().indexOf(val) !== -1) {
+                                newBusinessType.requiredPermits.push(businessRequiredPermit);
+                            }
+                        }
+
+                        // check conditional permits and add matching ones to result
+                        for (let businessConditionalPermit of businessType.conditionalPermits) {
+                            if (businessConditionalPermit.friendly_name.toLowerCase().indexOf(val) !== -1) {
+                                newBusinessType.conditionalPermits.push(businessConditionalPermit);
+                            }
+                        }
+
+                        if (newBusinessType.requiredPermits.length || newBusinessType.conditionalPermits.length) {
+                            searchBusinessTypes.push(newBusinessType);
+                        }
                     }
                 }
 
