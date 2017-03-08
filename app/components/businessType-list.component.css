@@ -81,7 +81,6 @@
     width: calc(100% - 75px); /* 75px is width of two icons (35 + 35) plus margin between them (5) */
 }
 .bp-permit-icons-holder {
-    width: 75px;
     display: flex;
 }
 .bp-permit-name, a.bp-permit-name:link, a.bp-permit-name:visited {
@@ -132,8 +131,6 @@ a.bp-permit-name {
     background-color: #DCDCDC;
     border-radius: 50%;
     display: inline-block;
-}
-.bp-permit-icon.view {
     margin-right: 5px;
 }
 .bp-permit-icon.download {
