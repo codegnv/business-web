@@ -19,15 +19,26 @@
         <div #selectedBusinessTypesID class="bp-types-permits">
             <div [@flyInOut] *ngIf="requiredPermitsToShow.length">
                 <div class="bp-list-permits-header">Required Permits ({{requiredPermitsToShow.length}})</div>
-                <!-- All Required Permits -->
                 <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredPermitsToShow; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
             </div>
             <div [@flyInOut] *ngIf="conditionalPermitsToShow.length">
                 <div class="bp-list-permits-header">Conditionally Required Permits ({{conditionalPermitsToShow.length}})</div>
-                <!-- All Conditional Permits -->
                 <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of conditionalPermitsToShow; let last = last">
+                    <bp-permit [permit]="permit"></bp-permit>
+                </div>
+            </div>
+
+            <div [@flyInOut] *ngIf="requiredAllBusinessPermits.length">
+                <div class="bp-list-permits-header">Required By All Businesses ({{requiredAllBusinessPermits.length}})</div>
+                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredAllBusinessPermits; let last = last">
+                    <bp-permit [permit]="permit"></bp-permit>
+                </div>
+            </div>
+            <div [@flyInOut] *ngIf="conditionalAllBusinessPermits.length">
+                <div class="bp-list-permits-header">Conditionally Required By All Businesses ({{conditionalAllBusinessPermits.length}})</div>
+                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of conditionalAllBusinessPermits; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
             </div>

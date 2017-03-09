@@ -52,6 +52,8 @@ export class BusinessTypeListComponent implements OnInit {
     toggleAllBusinessTypes: boolean = true;
     togglebusinessTypes: boolean =  true;
     toggleSelectedBusinesstype: boolean = false;
+    requiredAllBusinessPermits: Permit[] = [];
+    conditionalAllBusinessPermits: Permit[] = [];
 
     showSelectedBusinesstype: boolean = false;
 
@@ -90,6 +92,30 @@ export class BusinessTypeListComponent implements OnInit {
                 /* happy path */
                 this.businessTypes = b;
                 this.displayedTypes = this.businessTypes;
+
+                // Find permits that apply to all business types
+                const permitsForAllBusinessTypes = {
+                    requiredBusinessTypesByPermit: {},
+                    conditionalBusinessTypesByPermit: {},
+                };
+
+                this.businessTypes.forEach((businessType: BusinessType) => {
+                    // Loop over each business type to get its permit list
+                    // Keep a count of how many businesses use each permit
+                    ['required', 'conditional'].forEach((key: string) => {
+                        businessType[`${key}Permits`].forEach((permit: Permit) => {
+                            const permitKey = permitsForAllBusinessTypes[`${key}BusinessTypesByPermit`];
+                            if (permitKey.hasOwnProperty(permit.permit_name)) {
+                                permitKey[permit.permit_name]++;
+                                if (permitKey[permit.permit_name] === this.businessTypes.length) {
+                                    this[`${key}AllBusinessPermits`].push(permit);
+                                }
+                            } else {
+                                permitKey[permit.permit_name] = 1;
+                            }
+                        });
+                    });
+                });
             },
             e => {
                 /* error path */
