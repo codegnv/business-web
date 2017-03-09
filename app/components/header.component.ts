@@ -2,14 +2,13 @@
 import { BusinessSearchService } from '../businessSearch.service';
 
 @Component({
-    selector: 'header',
+    selector: 'permit-locator-header',
     templateUrl: './header.component.html',
 })
 export class HeaderComponent {
+    searchString = '';
 
     constructor(private businessSearchService: BusinessSearchService) {}
-
-    searchString = '';
 
     searchKeyUp(event: any) {
         // event.keyCode is 13 for 'Enter' Key
