@@ -166,7 +166,17 @@ nav a.router-link-active {
 }
 
 .list-group-item {
-  cursor: pointer
+  cursor: pointer;
+}
+
+.loading-screen {
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
 }
 
 /*.permit {
