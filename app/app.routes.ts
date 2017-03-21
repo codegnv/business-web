@@ -23,7 +23,7 @@ const routes: Routes = [
 
     {
         path: '**',
-        redirectTo: '/steps/1'
+        redirectTo: 'permit-locator'
     },
 ];
 
