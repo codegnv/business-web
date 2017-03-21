@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { BusinessTypeListComponent } from './components/businessType-list.component';
-import { StepsComponent } from './components/steps.component';
+// import { StepsComponent } from './components/steps.component';
 
 // Route config let's you map routes to components
 const routes: Routes = [
@@ -11,7 +11,9 @@ const routes: Routes = [
 
     {
         path: 'steps/:num',
-        component: StepsComponent,
+        // NOTE Currently all pages redirect to step 9 / business types list
+        // Other pages to be implemented later
+        component: BusinessTypeListComponent,
     },
 
     {
@@ -21,7 +23,7 @@ const routes: Routes = [
 
     {
         path: '**',
-        redirectTo: '/steps/1'
+        redirectTo: 'permit-locator'
     },
 ];
 
