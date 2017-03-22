@@ -32,7 +32,8 @@ For example:
 
 ### Commit Messages
 
-Commit messages should begin with `issue-<issue-id>` followed by a brief description of changes
+Commit messages should begin with `issue: #<issue-number>` followed by a brief description of changes.
+e.g. `issue: #141 making github icon match visual comps`. This allows the issue to be updated with the commit activity. Don't be afraid to use extended commit messages.
 
 ## Coding Guidelines
 
