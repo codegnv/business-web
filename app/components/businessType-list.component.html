@@ -43,6 +43,22 @@
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
             </div>
+            <div [@flyInOut] *ngIf="requiredPermitsToShow.length || conditionalPermitsToShow.length" class="next-step">
+                <!-- Next Steps Info -->
+                <div class="bp-list-permits-header">Next Steps</div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <img src="../../images/DOD-Logo-Horizontal.png" width="200px">
+                    </div>
+                    <div class="col-xs-9">
+                        <b>MAKE A FIRST-STEP APPOINTMENT WITH THE DEPARTMENT OF DOING</b><br>
+                        Your next step is to met with an Action Officer at the Department of Doing. This is a convenient, one-stop location where you can submit permits and forms, review zoning options, learn more about starting a business, and ask questions and recieve support.<br>
+                        <div>
+                            <button class="book-button">BOOK AN APPOINMENT &#8250; </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
