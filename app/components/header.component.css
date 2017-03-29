@@ -6,8 +6,9 @@
     float: left;
     position: relative;
     left: -15px;
-    top: 15px;
+    top: 10px;
 }
+
 .navbar-nav .nav-link {
     padding-top: 15px;
     padding-bottom: 2px;
@@ -34,12 +35,11 @@
     padding-right: 20px;
 }
 .bp-nav-hr {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 100%;
     border-top: 1.5px solid #eee;
+    position: relative;
+    top: -30px;
+    width: 100%;
+    z-index: -1;
 }
 .bp-navlink {
     background-color: transparent;
