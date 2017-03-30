@@ -152,12 +152,12 @@ a.bp-permit-name {
 }
 .book-button {
     margin-top: 20px;
+    padding: 20px;
+    display: inline-block;
     border-radius: 3px;
     background-color: white;
     border: 2px solid;
     color: #2D6AE2;
-    width: 250px;
-    height: 50px;
     font-weight: bold;
     font-size: 14px;
 }
@@ -165,8 +165,6 @@ a.bp-permit-name {
     background-color: #2D6AE2;
     border: #2D6AE2 2px solid;
     color: white;
-    width: 250px;
-    height: 50px;
     font-weight: bold;
     font-size: 14px;
 }
