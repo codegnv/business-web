@@ -18,8 +18,9 @@
 
         <!-- If Selected BusinessType  -->
         <div #selectedBusinessTypesID class="bp-types-permits">
+            <div class="bp-list-type-header">FORMS TO LAUNCH YOUR BUSINESS</div>
             <div [@flyInOut] *ngIf="requiredPermitsToShow.length">
-                <div class="bp-list-permits-header">Required Permits ({{requiredPermitsToShow.length}})</div>
+                <div class="bp-list-permits-header">Required Permits: <span *ngFor="let businessName of selectedBusinessTypes" class="bp-permit-name">{{businessName.business_type}} </span> ({{requiredPermitsToShow.length}})</div>
                 <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredPermitsToShow; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
