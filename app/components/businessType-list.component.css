@@ -19,6 +19,9 @@
     margin-right: auto;
     margin-left: auto;
 }
+.next-step-container {
+    padding-top: 20px;
+}
 .bp-list-type-header {
     border-bottom: 2px solid #5A5A5A;
     color: #5A5A5A;
