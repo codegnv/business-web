@@ -1,37 +1,37 @@
 <div class="page-header bp-header permit-header">
-	<nav class="navbar navbar-full bp-nav">
-		<div class="nav navbar-nav">
-			<img class="header-logo" src="../../images/logo--business-portal.svg" width="80">
+    <nav class="navbar navbar-full bp-nav">
+        <div class="nav navbar-nav">
+            <img class="header-logo" src="../../images/logo--business-portal.svg" width="80">
 
-			<li class="nav-item active">
-				<a class="nav-link bp-navlink" href="#">Permit Locator<span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item active pull-right">
-				<a class="nav-link bp-navlink" href="#">Contact</a>
-			</li>
-			<li class="nav-item active pull-right">
-				<a class="nav-link bp-navlink" href="#">About</a>
-			</li>
+            <li class="nav-item active">
+                <a class="nav-link bp-navlink" href="#">Permit Locator<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active pull-right">
+                <a class="nav-link bp-navlink" href="#">Contact</a>
+            </li>
+            <li class="nav-item active pull-right">
+                <a class="nav-link bp-navlink" href="#">About</a>
+            </li>
 
-			<hr class="bp-nav-hr">
-		</div>
-	</nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<p class="bp-header-text">GNV is open for business!<br>
-				Locate permits, licenses, and forms by searching or filtering below.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<div class="input-group bp-search">
-					<input type="text" class="form-control bp-search-input" [(ngModel)]="searchString" (keyup)="searchKeyUp($event)">
-					<span class="input-group-btn">
-						<button class="btn btn-secondary bp-search-input" type="button" (click)="searchBtnClicked()">Search</button>
-					</span>
-				</div>
-			</div>
-		</div>
-	</div>
+            <hr class="bp-nav-hr">
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p class="bp-header-text">GNV is open for business!<br>
+                Locate permits, licenses, and forms by searching or filtering below.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="input-group bp-search">
+                    <input type="text" class="form-control bp-search-input" [(ngModel)]="searchString" (keyup)="searchKeyUp($event)">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary bp-search-input" type="button" (click)="searchBtnClicked()">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
