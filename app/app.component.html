@@ -1,15 +1,49 @@
-<header>
-    <a [routerLink]="'/steps/1'">Step 1</a>
-    <a [routerLink]="'/steps/2'">Step 2</a>
-    <a [routerLink]="'/steps/3'">Step 3</a>
-    <a [routerLink]="'/steps/4'">Step 4</a>
-    <a [routerLink]="'/steps/5'">Step 5</a>
-    <a [routerLink]="'/steps/6'">Step 6</a>
-    <a [routerLink]="'/steps/7'">Step 7</a>
-    <a [routerLink]="'/steps/8'">Step 8</a>
-    <a [routerLink]="'/permit-locator'">Step 9</a>
-    <a [routerLink]="'/steps/10'">Step 10</a>
-    <a [routerLink]="'/steps/11'">Step 11</a>
+<header class="navigation-header">
+    <nav class="navbar navbar-full bp-nav">
+        <div class="nav navbar-nav">
+            <img class="header-logo" src="../images/logo--business-portal.svg" width="80">
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/1'">Step 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/2'">Step 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/3'">Step 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/4'">Step 4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/5'">Step 5</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/6'">Step 6</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/7'">Step 7</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/8'">Step 8</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/permit-locator'">Permit Locator</a><span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/10'">Step 10</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bp-navlink" [routerLink]="'/steps/11'">Step 11</a>
+            </li>
+            <li class="nav-item pull-right">
+                <a class="nav-link bp-navlink" href="#">Contact</a>
+            </li>
+            <li class="nav-item pull-right">
+                <a class="nav-link bp-navlink" href="#">About</a>
+            </li>
+            <hr class="bp-nav-hr">
+        </div>
+    </nav>
 </header>
 <router-outlet></router-outlet>
 <footer class="site-footer">
