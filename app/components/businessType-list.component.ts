@@ -50,7 +50,6 @@ export class BusinessTypeListComponent implements OnInit {
     conditionalPermitsToShowSet: Set<Permit> = new Set<Permit>();
     conditionalPermitsToShow: Permit[] = [];
     toggleAllBusinessTypes: boolean = true;
-    togglebusinessTypes: boolean =  true;
     toggleSelectedBusinesstype: boolean = false;
     requiredAllBusinessPermits: Permit[] = [];
     conditionalAllBusinessPermits: Permit[] = [];
@@ -125,9 +124,6 @@ export class BusinessTypeListComponent implements OnInit {
                 /* onComplete */
                 this.isLoading = false;
             });
-    }
-    onClickTogglebusinessTypes(): void {
-        this.togglebusinessTypes = !this.togglebusinessTypes;
     }
     onSelectBusinessType(selectedBusinessType: BusinessType): void {
         this.toggleAllBusinessTypes = false;
