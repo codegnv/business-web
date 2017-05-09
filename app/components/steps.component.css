@@ -1,0 +1,14 @@
+.article-header {
+  border-bottom: 2px solid #5A5A5A;
+  color: #5A5A5A;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 15px;
+  padding-right: 15px;
+  width: 95%;
+}
+
+.step-article {
+  width:90%;
+  margin: 0 auto;
+}

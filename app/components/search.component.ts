@@ -3,9 +3,9 @@ import { BusinessSearchService } from '../businessSearch.service';
 
 @Component({
     selector: 'permit-locator-header',
-    templateUrl: './header.component.html',
+    templateUrl: './search.component.html',
 })
-export class HeaderComponent {
+export class SearchComponent {
     searchString = '';
 
     constructor(private businessSearchService: BusinessSearchService) {}

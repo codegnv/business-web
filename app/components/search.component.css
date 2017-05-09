@@ -8,6 +8,9 @@
     left: -15px;
     top: 10px;
 }
+.search-explainer {
+    padding-top: 50px;
+}
 
 .navbar-nav .nav-link {
     padding-top: 15px;
@@ -45,7 +48,7 @@
     background-color: transparent;
     font-weight: 600;
     font-size: 1.1rem;
-    color: white !important;
+    color: #5A5A5A !important;
 }
 .bp-navlink:hover {
     background-color: transparent;
