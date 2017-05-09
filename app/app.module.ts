@@ -13,11 +13,18 @@ import { IconViewComponent } from './components/icon-components/iconView.compone
 import { IconDownloadComponent } from './components/icon-components/iconDownload.component';
 import { IconExternalComponent } from './components/icon-components/iconExternal.component';
 import { BpPermitComponent } from './components/bp-permit/bpPermit.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
     imports: [ BrowserModule, routing, FormsModule, HttpModule ],
-    declarations: [ AppComponent, BusinessTypeListComponent, SearchComponent, IconViewComponent, IconDownloadComponent,
-        IconExternalComponent, BpPermitComponent, StepsComponent ],
+    declarations: [
+        AppComponent, BusinessTypeListComponent, SearchComponent, IconViewComponent, IconDownloadComponent,
+        IconExternalComponent, BpPermitComponent, StepsComponent, LandingComponent, ContactComponent,
+        AboutComponent, DisclaimerComponent
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

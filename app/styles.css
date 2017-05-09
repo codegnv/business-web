@@ -2,6 +2,10 @@
 @import './components/search.component.css';
 @import './components/businessType-list.component.css';
 @import './components/steps.component.css';
+@import './components/landing/landing.component.css';
+@import './components/contact/contact.component.css';
+@import './components/about/about.component.css';
+@import './components/disclaimer/disclaimer.component.css';
 @import './footer.css';
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 /*@import '../node_modules/font-awesome/css/font-awesome.css';*/
