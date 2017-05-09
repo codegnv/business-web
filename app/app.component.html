@@ -1,7 +1,7 @@
 <header class="navigation-header">
     <nav class="navbar navbar-full bp-nav">
         <div class="nav navbar-nav">
-            <img class="header-logo" src="../images/logo--business-portal.svg" width="80">
+            <img [routerLink]="'/home'" class="header-logo" src="../images/logo--business-portal.svg" width="80">
             <li class="nav-item">
                 <a class="nav-link bp-navlink" [routerLink]="'/steps/1'">Step 1</a>
             </li>
@@ -34,12 +34,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link bp-navlink" [routerLink]="'/steps/11'">Step 11</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link bp-navlink" href="#">Contact</a>
-            </li>
-            <li class="nav-item pull-right">
-                <a class="nav-link bp-navlink" href="#">About</a>
             </li>
             <hr class="bp-nav-hr">
         </div>
@@ -120,13 +114,19 @@
             </p>
             <ul class="footer-link-list">
                 <li>
-                    <a href="">Disclaimer</a>
+                    <a [routerLink]="'/disclaimer'">Disclaimer</a>
                 </li>
                 <li>
-                    <a href="">Privacy Policy</a>
+                    <a href="https://data.cityofgainesville.org/privacy" target="_blank">Privacy Policy</a>
                 </li>
                 <li>
-                    <a href="">Accessibility</a>
+                    <a href="https://data.cityofgainesville.org/accessibility" target="_blank">Accessibility</a>
+                </li>
+                <li>
+                    <a [routerLink]="'/contact'">Contact</a>
+                </li>
+                <li>
+                    <a [routerLink]="'/about'">About</a>
                 </li>
             </ul>
             <img src="../images/gnv-city-logo.png" width="200px">
@@ -134,5 +134,5 @@
                 #c4gnv
             </h2>
         </section>
-    </div>g
+    </div>
 </footer>
