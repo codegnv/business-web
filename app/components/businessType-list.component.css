@@ -120,7 +120,6 @@ a.bp-permit-name {
     color: #7b7b7b;
 }
 .business-type-title {
-    cursor: pointer;
     position: relative;
 }
 .business-type-title.collapsed::after {
