@@ -183,3 +183,21 @@ nav a.router-link-active {
 /*.permit {
    font-style: italic;
 }*/
+
+.step-article h2 {
+    color: #5A5A5A;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding-top: 15px;
+    padding-right: 15px;
+    width: 95%;
+}
+
+.step-article h3 {
+    color: #5A5A5A;
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding-top: 15px;
+    padding-right: 15px;
+    width: 95%;
+}
