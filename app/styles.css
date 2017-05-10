@@ -146,6 +146,18 @@ nav a.router-link-active {
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+.stage-blue {
+  margin-left: 0px;
+  background-color: #5ACAEC;
+}
+.stage-yellow {
+  margin-left: 0px;
+  background-color: #FDCD07;
+}
+.stage-red {
+  margin-left: 0px;
+  background-color: #EB462C;
+}
 
 /* everywhere else */
 * {
