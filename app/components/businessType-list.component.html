@@ -9,41 +9,30 @@
 
                 <!-- Each Selected Business Type-->
                 <ul class="bp-list-types">
-                    <li class="bp-list-types-text no-select" *ngFor="let businessType of displayedTypes" (click)="onSelectBusinessType(businessType); $event.stopPropagation()" [class.selected]="selectedBusinessTypes.has(businessType)"> {{businessType.business_type}}
+                    <li class="bp-list-types-text no-select" *ngFor="let businessType of displayedTypes" (click)="onSelectBusinessType(businessType); $event.stopPropagation()" [class.selected]="selectedBusinessType === businessType">
+                        {{businessType.business_type}}
                     </li>
                 </ul>
             </div>
         </div>
 
         <!-- If Selected BusinessType  -->
-        <div #selectedBusinessTypesID class="bp-types-permits">
+        <div class="bp-types-permits" *ngIf="selectedBusinessType">
             <div class="bp-list-type-header">FORMS TO LAUNCH YOUR BUSINESS</div>
-            <div [@flyInOut] *ngIf="requiredPermitsToShow.length">
-                <div class="bp-list-permits-header">Required Permits: <span *ngFor="let businessName of selectedBusinessTypes" class="bp-permit-name">{{businessName.business_type}} </span> ({{requiredPermitsToShow.length}})</div>
-                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredPermitsToShow; let last = last">
+            <div [@flyInOut] *ngIf="selectedBusinessType.requiredPermits.length;">
+                <div class="bp-list-permits-header">Required Permits: <span class="bp-permit-name">{{selectedBusinessType.business_type}} </span> ({{selectedBusinessType.requiredPermits.length}})</div>
+                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.requiredPermits; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
             </div>
-            <div [@flyInOut] *ngIf="conditionalPermitsToShow.length">
-                <div class="bp-list-permits-header">Conditionally Required Permits ({{conditionalPermitsToShow.length}})</div>
-                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of conditionalPermitsToShow; let last = last">
+            <div [@flyInOut] *ngIf="selectedBusinessType.conditionalPermits.length;">
+                <div class="bp-list-permits-header">Conditionally Required Permits ({{selectedBusinessType.conditionalPermits.length}})</div>
+                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.conditionalPermits; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>
                 </div>
             </div>
 
-            <div [@flyInOut] *ngIf="requiredAllBusinessPermits.length">
-                <div class="bp-list-permits-header">Required By All Businesses ({{requiredAllBusinessPermits.length}})</div>
-                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of requiredAllBusinessPermits; let last = last">
-                    <bp-permit [permit]="permit"></bp-permit>
-                </div>
-            </div>
-            <div [@flyInOut] *ngIf="conditionalAllBusinessPermits.length">
-                <div class="bp-list-permits-header">Conditionally Required By All Businesses ({{conditionalAllBusinessPermits.length}})</div>
-                <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of conditionalAllBusinessPermits; let last = last">
-                    <bp-permit [permit]="permit"></bp-permit>
-                </div>
-            </div>
-            <div [@flyInOut] *ngIf="requiredPermitsToShow.length || conditionalPermitsToShow.length" class="next-step">
+            <div [@flyInOut] class="next-step">
                 <!-- Next Steps Info -->
                 <div class="bp-list-type-header">Next Steps</div>
                 <div class="row next-step-container">
@@ -59,6 +48,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div *ngIf="!selectedBusinessType">
+            Please select a business type to view the permits that you'll need
         </div>
     </div>
 </section>

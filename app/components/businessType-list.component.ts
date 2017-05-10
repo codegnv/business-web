@@ -44,15 +44,9 @@ export class BusinessTypeListComponent implements OnInit {
     errorMessage: string = '';
     isLoading: boolean = true;
 
-    selectedBusinessTypes: Set<BusinessType> = new Set<BusinessType>();
-    requiredPermitsToShowSet: Set<Permit> = new Set<Permit>();
-    requiredPermitsToShow: Permit[] = [];
-    conditionalPermitsToShowSet: Set<Permit> = new Set<Permit>();
-    conditionalPermitsToShow: Permit[] = [];
+    selectedBusinessType: BusinessType;
     toggleAllBusinessTypes: boolean = true;
     toggleSelectedBusinesstype: boolean = false;
-    requiredAllBusinessPermits: Permit[] = [];
-    conditionalAllBusinessPermits: Permit[] = [];
 
     showSelectedBusinesstype: boolean = false;
 
@@ -78,11 +72,6 @@ export class BusinessTypeListComponent implements OnInit {
             } else {
                 this.displayedTypes = this.businessTypes;
             }
-            this.selectedBusinessTypes = new Set<BusinessType>();
-            this.requiredPermitsToShowSet = new Set<Permit>();
-            this.requiredPermitsToShow = [];
-            this.conditionalPermitsToShowSet = new Set<Permit>();
-            this.conditionalPermitsToShow = [];
         });
         this.businessTypesService
         .getAll()
@@ -107,7 +96,7 @@ export class BusinessTypeListComponent implements OnInit {
                             if (permitKey.hasOwnProperty(permit.permit_name)) {
                                 permitKey[permit.permit_name]++;
                                 if (permitKey[permit.permit_name] === this.businessTypes.length) {
-                                    this[`${key}AllBusinessPermits`].push(permit);
+                                    // this[`${key}AllBusinessPermits`].push(permit);
                                 }
                             } else {
                                 permitKey[permit.permit_name] = 1;
@@ -127,29 +116,6 @@ export class BusinessTypeListComponent implements OnInit {
     }
     onSelectBusinessType(selectedBusinessType: BusinessType): void {
         this.toggleAllBusinessTypes = false;
-        if (this.selectedBusinessTypes.has(selectedBusinessType)) {
-            this.selectedBusinessTypes.delete(selectedBusinessType);
-        } else {
-            this.selectedBusinessTypes.add(selectedBusinessType);
-        }
-
-        this.requiredPermitsToShowSet.clear();
-        this.conditionalPermitsToShowSet.clear();
-        for (const businessType of Array.from(this.selectedBusinessTypes)) {
-            businessType.requiredPermits.forEach((permit: Permit) => this.requiredPermitsToShowSet.add(permit));
-            businessType.conditionalPermits.forEach((permit: Permit) => this.conditionalPermitsToShowSet.add(permit));
-        }
-
-        const permitSort = (permita: Permit, permitb: Permit) => {
-            if (permita.friendly_name < permitb.friendly_name) {
-                return -1;
-            } else if (permita.friendly_name > permitb.friendly_name) {
-                return 1;
-            }
-            return 0;
-        };
-
-        this.requiredPermitsToShow = Array.from(this.requiredPermitsToShowSet).sort(permitSort);
-        this.conditionalPermitsToShow = Array.from(this.conditionalPermitsToShowSet).sort(permitSort);
+        this.selectedBusinessType = selectedBusinessType;
     }
 }
