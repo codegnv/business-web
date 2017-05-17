@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { routing } from './app.routes';
 
 import { AppComponent }  from './app.component';
@@ -19,7 +21,7 @@ import { AboutComponent } from './components/about/about.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
-    imports: [ BrowserModule, routing, FormsModule, HttpModule ],
+    imports: [ BrowserModule, routing, FormsModule, HttpModule, NgbModule ],
     declarations: [
         AppComponent, BusinessTypeListComponent, SearchComponent, IconViewComponent, IconDownloadComponent,
         IconExternalComponent, BpPermitComponent, StepsComponent, LandingComponent, ContactComponent,
