@@ -3,6 +3,7 @@ node_js:
     - "6"
 branches:
     only:
+    - master
     - develop
 before_install:
     - pip install --user awscli
@@ -10,10 +11,18 @@ before_install:
     - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
     - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 before_deploy:
-    aws s3 rm s3://bdev.c4gnv.com/ --recursive --region us-east-1
+    - if [ "$TRAVIS_BRANCH" = "develop" ]; then
+        echo -e "\e[1m\e[36mBuilding for develop";
+        export TARGET_BUCKET="bdev.c4gnv.com";
+        export TARGET_REGION="us-east-1";
+      fi
+    - if [ "$TRAVIS_BRANCH" = "master" ]; then
+        echo -e "\e[1m\e[36mBuilding for production";
+        export TARGET_BUCKET="business.cityofgainesville.org";
+        export TARGET_REGION="us-east-2";
+      fi
+    - aws s3 rm s3://${TARGET_BUCKET}/ --recursive --region $TARGET_REGION
 install:
-    - curl -o- -L https://yarnpkg.com/install.sh | bash
-    - export PATH=$PATH:$HOME/.yarn/bin
     - yarn install --no-progress
 script: yarn run build
 
@@ -21,14 +30,16 @@ deploy:
     provider: s3
     access_key_id: $AWS_ACCESS_KEY # Declared in travis build settings
     secret_access_key: $AWS_SECRET_KEY # Declared in travis build settings
-    bucket: bdev.c4gnv.com
+    bucket: $TARGET_BUCKET
     cache_control: "max-age=604800"
     skip_cleanup: true
-    region: "us-east-1"
+    region: $TARGET_REGION
     local_dir: build
     detect_encoding: true
     on:
-        branch: develop
+        branch:
+        - master
+        - develop
 notifications:
     email:
         on_failure: always
