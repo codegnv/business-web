@@ -13,7 +13,6 @@
 }
 
 .navbar-nav .nav-link {
-    padding-top: 15px;
     padding-bottom: 2px;
 }
 .nav-active {
@@ -34,6 +33,7 @@
     overflow: hidden;
 }
 .bp-nav {
+    padding-top: 0px;
     border: 0px;
     width: 90%;
     margin: 0 auto;
@@ -88,6 +88,11 @@
 }
 .input-group {
     margin-bottom: 20px;
+}
+.icon-center {
+    padding-top: 10px;
+    color: white;
+    text-align: center;
 }
 button.bp-search-btn {
     border-left: none;
