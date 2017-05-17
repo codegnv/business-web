@@ -1,8 +1,8 @@
 import { Permit } from './permit';
 
 export interface BusinessType {
-    readonly business_category: string;
-    readonly business_type: string;
+    business_category: string;
+    business_type: string;
     requiredPermits: Permit[];
     conditionalPermits: Permit[];
     collapsed: boolean;
