@@ -1,3 +1,6 @@
+.navigation-header {
+    background: linear-gradient(90deg, #fdcd07 50%, #eb462c 50%);
+}
 .permit-header {
     background-image: url(../../images/image-bg.png);
     background-position: 50% 40%;
@@ -6,7 +9,7 @@
     float: left;
     position: relative;
     left: -15px;
-    top: 10px;
+    top: 5px;
 }
 .search-explainer {
     padding-top: 50px;
@@ -33,6 +36,7 @@
     overflow: hidden;
 }
 .bp-nav {
+    height: 89px;
     padding-top: 0px;
     border: 0px;
     width: 90%;
