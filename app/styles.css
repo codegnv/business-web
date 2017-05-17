@@ -217,3 +217,29 @@ nav a.router-link-active {
     padding-right: 15px;
     width: 95%;
 }
+
+button.nav-collapse-button {
+    float: right;
+    position: relative;
+    top: 35px;
+    right: 30px;
+}
+
+button.nav-collapse-button:focus {
+    outline: none;
+}
+
+@media (min-width: 1145px) {
+    button.nav-collapse-button {
+        display: none;
+    }
+    div.bp-nav-menu.collapse.in {
+        display: none;
+    }
+}
+
+@media (max-width: 1144px) {
+    div.bp-navbar-large {
+        display: none;
+    }
+}
