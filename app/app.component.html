@@ -2,42 +2,54 @@
     <nav class="navbar navbar-full bp-nav">
         <div class="nav navbar-nav">
             <img [routerLink]="'/home'" class="header-logo" src="../images/logo--business-portal.svg" width="80">
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/1'">Step 1</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/2'">Step 2</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/3'">Step 3</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/4'">Step 4</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/5'">Step 5</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/6'">Step 6</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/7'">Step 7</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/8'">Step 8</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/permit-locator'">Permit Locator</a><span class="sr-only">(current)</span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/10'">Step 10</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bp-navlink" [routerLink]="'/steps/11'">Step 11</a>
-            </li>
-            <hr class="bp-nav-hr">
+            <div class="bp-navbar-large">
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/1'">Step 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/2'">Step 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/3'">Step 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/4'">Step 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/5'">Step 5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/6'">Step 6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/7'">Step 7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/8'">Step 8</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/permit-locator'">Permit Locator</a><span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/10'">Step 10</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link bp-navlink" [routerLink]="'/steps/11'">Step 11</a>
+                </li>
+                <hr class="bp-nav-hr">
+            </div>
+            <button class="nav-collapse-button" (click)="navbarCollapsed = !navbarCollapsed"
+                [attr.aria-expanded]="!navbarCollapsed"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i></button>
         </div>
     </nav>
+    <div class="navbar-collapse bp-nav bp-nav-menu" [ngbCollapse]="navbarCollapsed" id="navbarContent">
+        <div class="bp-nav-menu-item" *ngFor="let route of appRoutes">
+            <a [routerLink]="route.link" (click)="onNavClick()">{{route.name}}</a>
+        </div>
+    </div>
 </header>
 <router-outlet></router-outlet>
 <footer class="site-footer">
