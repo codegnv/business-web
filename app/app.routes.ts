@@ -15,8 +15,6 @@ const routes: Routes = [
 
     {
         path: 'steps/:num',
-        // NOTE Currently all pages redirect to step 9 / business types list
-        // Other pages to be implemented later
         component: StepsComponent,
     },
 
