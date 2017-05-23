@@ -7,6 +7,7 @@
 @import './components/about/about.component.css';
 @import './components/disclaimer/disclaimer.component.css';
 @import './footer.css';
+@import './menu.css';
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,700');
 /*@import '../node_modules/font-awesome/css/font-awesome.css';*/
 
@@ -216,30 +217,4 @@ nav a.router-link-active {
     padding-top: 15px;
     padding-right: 15px;
     width: 95%;
-}
-
-button.nav-collapse-button {
-    float: right;
-    position: relative;
-    top: 35px;
-    right: 30px;
-}
-
-button.nav-collapse-button:focus {
-    outline: none;
-}
-
-@media (min-width: 1145px) {
-    button.nav-collapse-button {
-        display: none;
-    }
-    div.bp-nav-menu.collapse.in {
-        display: none;
-    }
-}
-
-@media (max-width: 1144px) {
-    div.bp-navbar-large {
-        display: none;
-    }
 }

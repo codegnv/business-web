@@ -15,49 +15,75 @@ export class AppComponent {
     }
     appRoutes = [
         {
-            name : 'Step 1',
+            name : 'Dream',
             link: '/steps/1',
-            class: ''
+            icon: 'fa-cloud',
+            class: 'stage-yellow'
         }, {
-            name : 'Step 2',
+            name : 'Plan',
             link: '/steps/2',
-            class: ''
+            icon: 'fa-bar-chart',
+            class: 'stage-yellow'
         }, {
-            name : 'Step 3',
+            name : 'Finance',
             link: '/steps/3',
-            class: ''
+            icon: 'fa-bank',
+            class: 'stage-yellow'
         }, {
-            name : 'Step 4',
+            name : 'Legalize',
             link: '/steps/4',
-            class: ''
+            icon: 'fa-copyright',
+            class: 'stage-yellow'
         }, {
-            name : 'Step 5',
+            name : 'Brand',
             link: '/steps/5',
-            class: ''
+            icon: 'fa-tag',
+            class: 'stage-yellow'
         }, {
-            name : 'Step 6',
+            name : 'Search',
             link: '/steps/6',
-            class: ''
+            icon: 'fa-map-signs',
+            class: 'stage-blue'
         }, {
-            name : 'Step 7',
+            name : 'Shape',
             link: '/steps/7',
-            class: ''
+            icon: 'fa-signing',
+            class: 'stage-blue'
         }, {
-            name : 'Step 8',
+            name : 'Build',
             link: '/steps/8',
-            class: ''
+            icon: 'fa-building',
+            class: 'stage-blue'
         }, {
-            name : 'Permit Locator',
+            name : 'Permit',
             link: '/permit-locator',
-            class: ''
+            icon: 'fa-search-plus',
+            class: 'stage-blue'
         }, {
-            name : 'Step 10',
+            name : 'Hire',
             link: '/steps/10',
-            class: ''
+            icon: 'fa-group',
+            class: 'stage-red'
         }, {
-            name : 'Step 11',
+            name : 'Taxes',
             link: '/steps/11',
-            class: ''
+            icon: 'fa-balance-scale',
+            class: 'stage-red'
+        }, {
+            name : 'Celebrate',
+            link: '/steps/12',
+            icon: 'fa-birthday-cake',
+            class: 'stage-red'
+        }, {
+            name : 'Open',
+            link: '/steps/13',
+            icon: 'fa-shopping-bag',
+            class: 'stage-red'
+        }, {
+            name : 'Grow',
+            link: '/steps/14',
+            icon: 'fa-line-chart',
+            class: 'stage-red'
         }
     ];
 }
