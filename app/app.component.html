@@ -21,7 +21,8 @@
     </nav>
     <div class="navbar-collapse bp-nav bp-nav-menu" [ngbCollapse]="navbarCollapsed" id="navbarContent">
         <div class="bp-nav-menu-item" *ngFor="let route of appRoutes"
-            [routerLink]="route.link" (click)="onNavClick()" [ngClass]="route.class">
+            [routerLink]="route.link" (click)="onNavClick()" [ngClass]="route.class"
+            routerLinkActive="nav-active">
             <div class="icon-left"><i aria-hidden="true" class="fa fa-2x" [ngClass]="route.icon"></i></div>
             <a class="menu-route">{{route.name}}</a>
         </div>
