@@ -12,10 +12,11 @@
         display: none;
     }
     img.header-logo {
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
     div.nav {
-        height: 80px;
+        height: 89px;
     }
 }
 
