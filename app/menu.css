@@ -18,6 +18,9 @@
     div.nav {
         height: 89px;
     }
+    .navigation-header {
+        background: #fdcd07;
+    }
 }
 
 button.nav-collapse-button {
