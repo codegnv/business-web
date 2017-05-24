@@ -17,8 +17,12 @@
   width: 95%;
 }
 .step-article .side-figure {
-  border: 2px;
+  margin: 10px;
+  padding: 5px;
   float: right;
+}
+.step-article .figure {
+  width: 100%;
 }
 .step-text {
   width: 60%;
