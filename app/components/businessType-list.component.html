@@ -20,7 +20,7 @@
         <div class="bp-types-permits" *ngIf="selectedBusinessType">
             <div class="bp-list-type-header">FORMS TO LAUNCH YOUR <span class="bp-permit-name">{{selectedBusinessType.business_type}}</span> BUSINESS</div>
             <div [@flyInOut] *ngIf="selectedBusinessType.requiredPermits.length;">
-                <p>Short description of the business. Pellentesque suscipit condimentum dui. Quisque mauris ipsum, tristique ut purus sit amet, fringilla cursus mi. Curabitur sed pretium lacus, vel maximus est. In aliquam convallis dictum. Integer hendrerit bibendum sem in posuere.</p>
+				<p>{{selectedBusinessType.business_description}}</p>
                 <div class="bp-list-type-header">Required Permits ({{selectedBusinessType.requiredPermits.length}})</div>
                 <div [@flyInOut]="selectedBusinessTypes" class="bp-permit" [ngClass]="{'last': last}" *ngFor="let permit of selectedBusinessType.requiredPermits; let last = last">
                     <bp-permit [permit]="permit"></bp-permit>

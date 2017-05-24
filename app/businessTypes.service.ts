@@ -84,6 +84,10 @@ function combineTypesAndPermits(businessTypes: BusinessType[], permits: Permit[]
     for (let businessType of businessTypes) {
         let permitsForThisType: Permit[] = [];
         let conditionalPermitsForThisType: Permit[] = [];
+        let businessDescription = 'Business Description Coming Fall 2013';
+        if (businessType.hasOwnProperty('business_description')) {
+            businessDescription = businessType.business_description;
+        }
         for (let permitName in permitNames) {
             if (permitNames.hasOwnProperty(permitName)) {
                 if (businessType[permitName] === 'Required') {
@@ -96,6 +100,7 @@ function combineTypesAndPermits(businessTypes: BusinessType[], permits: Permit[]
         }
         let finalBusinessType = <BusinessType>({
             business_type: businessType.business_type,
+            business_description: businessDescription,
             business_category: businessType.business_category,
             requiredPermits: permitsForThisType,
             conditionalPermits: conditionalPermitsForThisType
