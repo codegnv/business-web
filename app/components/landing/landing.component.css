@@ -1,10 +1,44 @@
 .container-landing {
-    text-align: center;
+    clear: both;
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 90%;
+}
+
+.container-landing article {
+    float: left;
+    margin-right: 5%;
+    width: 60%;
+}
+
+.container-landing button {
+  border: 1px solid #FDCD07;
+  font-size: 20px;
+  padding: 10px 30px;
+}
+
+.container-landing aside img {
+    margin-top: 56px;
+    width: 35%;
+}
+
+.container-landing aside hr {
+    visibility: hidden;
 }
 
 @media (max-width: 600px) {
+  .container-landing article {
+    margin-left: 7%;
+    width: 90%;
+  }
   .container-landing img {
-    height: auto;
-    width: 100%;
+    display: none;
+  }
+  .container-landing aside {
+    margin-bottom: 50px;
+  }
+  .container-landing hr {
+    clear: both;
+    display: block;
   }
 }
