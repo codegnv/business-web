@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { BusinessTypeListComponent } from './components/businessType-list.component';
-import { StepsComponent } from './components/steps.component';
+import { StepsComponent } from './components/steps/steps.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 import { AboutComponent } from './components/about/about.component';

@@ -1,7 +1,7 @@
 /* Master Styles */
 @import './components/search.component.css';
 @import './components/businessType-list.component.css';
-@import './components/steps.component.css';
+@import './components/steps/steps.component.css';
 @import './components/landing/landing.component.css';
 @import './components/contact/contact.component.css';
 @import './components/about/about.component.css';

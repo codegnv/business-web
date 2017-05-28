@@ -5,11 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { StepsModule } from './components/steps/steps.module';
+
 import { routing } from './app.routes';
 
 import { AppComponent }  from './app.component';
 import { BusinessTypeListComponent } from './components/businessType-list.component';
-import { StepsComponent } from './components/steps.component';
 import { SearchComponent } from './components/search.component';
 import { IconViewComponent } from './components/icon-components/iconView.component';
 import { IconDownloadComponent } from './components/icon-components/iconDownload.component';
@@ -21,10 +22,10 @@ import { AboutComponent } from './components/about/about.component';
 import { DisclaimerComponent } from './components/disclaimer/disclaimer.component';
 
 @NgModule({
-    imports: [ BrowserModule, routing, FormsModule, HttpModule, NgbModule ],
+    imports: [ BrowserModule, routing, FormsModule, HttpModule, NgbModule, StepsModule ],
     declarations: [
         AppComponent, BusinessTypeListComponent, SearchComponent, IconViewComponent, IconDownloadComponent,
-        IconExternalComponent, BpPermitComponent, StepsComponent, LandingComponent, ContactComponent,
+        IconExternalComponent, BpPermitComponent, LandingComponent, ContactComponent,
         AboutComponent, DisclaimerComponent
     ],
     bootstrap: [ AppComponent ]

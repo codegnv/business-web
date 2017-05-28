@@ -1,0 +1,34 @@
+.step-article .title {
+  border-bottom: 2px solid #5A5A5A;
+  color: #5A5A5A;
+  font-weight: 700;
+  font-size: 2.5rem;
+  padding-top: 15px;
+  padding-right: 15px;
+  width: 60%;
+}
+
+.step-article .section {
+  color: #5A5A5A;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 15px;
+  padding-right: 15px;
+  width: 95%;
+}
+.step-article .side-figure {
+  margin: 10px;
+  padding: 5px;
+  float: right;
+}
+.step-article .figure {
+  width: 100%;
+}
+.step-text {
+  width: 60%;
+}
+
+.step-article {
+  width:90%;
+  margin: 0 auto;
+}
