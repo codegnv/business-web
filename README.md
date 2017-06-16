@@ -93,3 +93,4 @@ permit_name: string;
 
 The permit locator page makes two http requests to Socrata (see above URLs) and generates an array of BusinessType structures.
 This structure is populated with types and permits from Socrata.
+
