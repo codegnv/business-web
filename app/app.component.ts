@@ -45,7 +45,7 @@ export class AppComponent {
             icon: 'fa-map-signs',
             class: 'stage-blue'
         }, {
-            name : 'Shape',
+            name : 'Permit',
             link: '/permit-locator',
             icon: 'fa-signing',
             class: 'stage-blue'
