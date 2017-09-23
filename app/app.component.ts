@@ -46,18 +46,13 @@ export class AppComponent {
             class: 'stage-blue'
         }, {
             name : 'Shape',
-            link: '/steps/7',
+            link: '/permit-locator',
             icon: 'fa-signing',
             class: 'stage-blue'
         }, {
             name : 'Build',
             link: '/steps/8',
             icon: 'fa-building',
-            class: 'stage-blue'
-        }, {
-            name : 'Permit',
-            link: '/permit-locator',
-            icon: 'fa-search-plus',
             class: 'stage-blue'
         }, {
             name : 'Hire',
