@@ -1,7 +1,7 @@
 <header class="navigation-header">
     <nav class="navbar navbar-full bp-nav">
         <div class="nav navbar-nav">
-            <img [routerLink]="'/home'" class="header-logo" src="../images/logo--business-portal.svg" width="80">
+            <img [routerLink]="'/home'" class="header-logo" src="../images/logo--business-portal.svg" width="80" alt="Gainesville Business Portal">
             <div class="bp-navbar-large">
                 <li class="nav-item"
                     *ngFor="let route of appRoutes"
@@ -93,8 +93,8 @@
 
         <section class="footer-section footer-contact">
             <p>
-                <a href="https://github.com/c4gnv/business-web/"><i class="fa fa-github fa-2"></i></a>
-                <a href="https://github.com/c4gnv/business-web/blob/develop/CONTRIBUTING.md"><i class="fa fa-envelope-o fa-2"></i></a>
+                <a href="https://github.com/c4gnv/business-web/"><i class="fa fa-github fa-2"></i><span class="assistive-text">Source code</span></a>
+                <a href="https://github.com/c4gnv/business-web/blob/develop/CONTRIBUTING.md"><i class="fa fa-envelope-o fa-2"></i><span class="assistive-text">Contibuting</span></a>
             </p>
             <p>
                 This site is an open source project hosted on <a href="https://github.com/c4gnv/business-web/">Github</a>.
@@ -118,7 +118,7 @@
                     <a [routerLink]="'/about'">About</a>
                 </li>
             </ul>
-            <img src="../images/gnv-city-logo.png" width="200px">
+            <img src="../images/gnv-city-logo.png" width="200px" alt="Gainesville City Logo">
             <h2>
                 #c4gnv
             </h2>

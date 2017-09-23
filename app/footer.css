@@ -1,7 +1,11 @@
 .site-footer {
     box-sizing: border-box;
-    background-color: rgb(220, 220, 220);
+    background-color: #efefef;
+    color: #494949;
     margin-top: 25px;
+}
+.site-footer a {
+  color: #483D8B !important;
 }
 .footer-wrap {
     padding: 50px;

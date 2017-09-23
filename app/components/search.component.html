@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="input-group bp-search">
-                    <input type="text" class="form-control bp-search-input" [(ngModel)]="searchString" (keyup)="searchKeyUp($event)">
+                    <input type="text" class="form-control bp-search-input" [(ngModel)]="searchString" (keyup)="searchKeyUp($event)" title="search field">
                     <span class="input-group-btn">
                         <button class="btn btn-secondary bp-search-input" type="button" (click)="searchBtnClicked()">Search</button>
                     </span>
