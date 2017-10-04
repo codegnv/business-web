@@ -20,7 +20,7 @@ We welcome your contribution! Please see our
 ## Install
 You want to run this bad boy locally?  Let's do it.
 
-###Install Tools
+### Install Tools
 * Install nodejs from https://nodejs.org/en/
 
 * Install npm from https://www.npmjs.com/
@@ -34,16 +34,16 @@ You want to run this bad boy locally?  Let's do it.
 
 * Install the latest version of GIT from https://git-scm.com/
 
-###Get That Repo
+### Get That Repo
 From the command line execute `git clone https://github.com/c4gnv/business-web.git` to get this repository down to your local machine
 
-###Install the Dependancies
+### Install the Dependancies
 Run `yarn install` in the project's root directory
 
-###Start it up
+### Start it up
 Run `yarn start` and head over to http://localhost:8080/ you should now see the latest and greatest.
 
-#How This all Fits Together
+# How This all Fits Together
 =======
 ## Model Permit sites
 https://businessportal.sfgov.org/permits-licenses
