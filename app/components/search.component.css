@@ -27,6 +27,9 @@
 .navbar-nav .nav-item.pull-right {
     float: right;
 }
+.navbar-nav .nav-item {
+    cursor: pointer;
+}
 .page-header, .bp-header {
     margin: 0;
     padding: 0px 0px 20px 0px;
