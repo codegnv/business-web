@@ -17,67 +17,67 @@ export class AppComponent {
         {
             name : 'Dream',
             link: '/steps/1',
-            icon: 'fa-cloud',
+            icon: '/images/icons/dream.svg',
             class: 'stage-yellow'
         }, {
             name : 'Plan',
             link: '/steps/2',
-            icon: 'fa-bar-chart',
+            icon: '/images/icons/plan.svg',
             class: 'stage-yellow'
         }, {
             name : 'Finance',
             link: '/steps/3',
-            icon: 'fa-bank',
+            icon: '/images/icons/finance.svg',
             class: 'stage-yellow'
         }, {
             name : 'Legalize',
             link: '/steps/4',
-            icon: 'fa-copyright',
+            icon: '/images/icons/legalize.svg',
             class: 'stage-yellow'
         }, {
             name : 'Brand',
             link: '/steps/5',
-            icon: 'fa-tag',
+            icon: '/images/icons/brand.svg',
             class: 'stage-yellow'
         }, {
             name : 'Search',
             link: '/steps/6',
-            icon: 'fa-map-signs',
+            icon: '/images/icons/search.svg',
             class: 'stage-blue'
         }, {
             name : 'Permit',
             link: '/permit-locator',
-            icon: 'fa-signing',
+            icon: '/images/icons/permit.svg',
             class: 'stage-blue'
         }, {
             name : 'Build',
             link: '/steps/8',
-            icon: 'fa-building',
+            icon: '/images/icons/build.svg',
             class: 'stage-blue'
         }, {
             name : 'Hire',
             link: '/steps/10',
-            icon: 'fa-group',
+            icon: '/images/icons/hire.svg',
             class: 'stage-red'
         }, {
             name : 'Taxes',
             link: '/steps/11',
-            icon: 'fa-balance-scale',
+            icon: '/images/icons/taxes.svg',
             class: 'stage-red'
         }, {
             name : 'Celebrate',
             link: '/steps/12',
-            icon: 'fa-birthday-cake',
+            icon: '/images/icons/celebrate.svg',
             class: 'stage-red'
         }, {
             name : 'Open',
             link: '/steps/13',
-            icon: 'fa-shopping-bag',
+            icon: '/images/icons/open.svg',
             class: 'stage-red'
         }, {
             name : 'Grow',
             link: '/steps/14',
-            icon: 'fa-line-chart',
+            icon: '/images/icons/grow.svg',
             class: 'stage-red'
         }
     ];

@@ -8,7 +8,7 @@
                     [ngClass]="route.class"
                     routerLinkActive="nav-active"
                     [routerLink]="route.link">
-                    <div class="icon-center"><i aria-hidden="true" class="fa fa-2x" [ngClass]="route.icon"></i></div>
+                    <div class="icon-center"><img aria-hidden="true" class="nav-icon" src={{route.icon}}></div>
                     <a class="nav-link bp-navlink">{{route.name}}</a>
                 </li>
             </div>
@@ -23,7 +23,7 @@
         <div class="bp-nav-menu-item" *ngFor="let route of appRoutes"
             [routerLink]="route.link" (click)="onNavClick()" [ngClass]="route.class"
             routerLinkActive="nav-active">
-            <div class="icon-left"><i aria-hidden="true" class="fa fa-2x" [ngClass]="route.icon"></i></div>
+            <div class="icon-left"><img aria-hidden="true" class="nav-icon" src={{route.icon}}></div>
             <a class="menu-route">{{route.name}}</a>
         </div>
     </div>
