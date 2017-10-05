@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StepsComponent } from './steps.component';
+import { Step1Component } from './step-1/step-1.component';
 import { Step2Component } from './step-2/step-2.component';
 import { Step3Component } from './step-3/step-3.component';
 import { Step4Component } from './step-4/step-4.component';
@@ -14,6 +15,7 @@ import { Step11Component } from './step-11/step-11.component';
   imports: [ CommonModule ],
   declarations: [
     StepsComponent,
+    Step1Component,
     Step2Component,
     Step3Component,
     Step4Component,
