@@ -1,4 +1,4 @@
-@media (min-width: 1287px) {
+@media (min-width: 1206px) {
     button.nav-collapse-button {
         display: none;
     }
@@ -7,7 +7,7 @@
     }
 }
 
-@media (max-width: 1286px) {
+@media (max-width: 1205px) {
     div.bp-navbar-large {
         display: none;
     }
@@ -32,6 +32,12 @@ button.nav-collapse-button {
 
 button.nav-collapse-button:focus {
     outline: none;
+}
+
+.nav-icon {
+    margin-bottom: -10px;
+    width: 43px;
+    height: 44px;
 }
 
 .bp-nav-menu {
