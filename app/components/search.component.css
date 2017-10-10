@@ -10,6 +10,7 @@
     position: relative;
     left: -15px;
     top: 5px;
+    cursor: pointer;
 }
 .search-explainer {
     padding-top: 50px;
