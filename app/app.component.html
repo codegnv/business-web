@@ -23,7 +23,7 @@
         <div class="bp-nav-menu-item" *ngFor="let route of appRoutes"
             [routerLink]="route.link" (click)="onNavClick()" [ngClass]="route.class"
             routerLinkActive="nav-active">
-            <div class="icon-left"><img aria-hidden="true" class="nav-icon" src={{route.icon}}></div>
+            <div class="icon-left"><img aria-hidden="true" class="nav-icon" src="{{route.icon}}"></div>
             <a class="menu-route">{{route.name}}</a>
         </div>
     </div>
